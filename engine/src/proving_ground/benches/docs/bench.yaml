@@ -1,0 +1,25 @@
+id: docs
+disciplines: [docs, development]
+name: Write a how-to that actually works
+discipline: docs
+summary: A small invoicing CLI with four commands and no docs. Write a how-to; every command in it is run, every subcommand must be covered, and a judge grades whether a new user could follow it.
+workflow:
+  id: docs
+  name: How-to
+  success: A newcomer can do the task from the page alone, and every example runs.
+  steps:
+    - {name: explore, type: research, why: What the tool does}
+    - {name: write, type: write, why: The page}
+    - {name: verify, type: test, why: Run every example}
+scenarios:
+  - id: howto
+    kind: typical
+    step: write
+    title: How-to for the invoice CLI
+    instruction: "Write docs/HOWTO.md: a how-to for invoice.py for someone who has never used it. Show each command (new, add-line, show, mark-paid) in a ```bash block that runs from the repo root as written (start each line with python3 invoice.py). Keep the examples in order so they work one after another."
+    judge:
+      context: [invoice.py]
+      rubric:
+        - "Task first: a newcomer can create, fill, view and close an invoice by following the page top to bottom."
+        - "Accurate: options and output described match what invoice.py really does."
+        - "Concise: no filler; each example says what it does in one line."

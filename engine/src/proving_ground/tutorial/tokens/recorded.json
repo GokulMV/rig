@@ -1,0 +1,743 @@
+{
+  "recorded": "2026-10-28",
+  "model": {
+    "file": "Qwen3.5-9B-Q4_0.gguf",
+    "id": "qwen3.5-9b",
+    "server": "llama.cpp 0.7.0 (build 11669): -c 65536 --jinja, Qwen 3.5's own chat template with its system-message check turned into a system turn; thinking on (Claude Code asks for it)",
+    "agent": "claude-code",
+    "nudge": true,
+    "timeout_factor": 3
+  },
+  "skill": "lean-context",
+  "fingerprint": "9a1ba1c49b11bd8f3ec4611f504c8b97af9f310e8767344312c6a37c23a48b77",
+  "repeats": 4,
+  "tasks": [
+    {
+      "id": "char-count",
+      "title": "Character count",
+      "instruction": "Add `char_count(text)` to textkit/count.py: how many characters the text has that aren't whitespace, as an int.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 98.4,
+          "detail": null,
+          "tokens": 58347
+        },
+        {
+          "outcome": "pass",
+          "seconds": 74.7,
+          "detail": null,
+          "tokens": 59321
+        },
+        {
+          "outcome": "pass",
+          "seconds": 95.4,
+          "detail": null,
+          "tokens": 58655
+        },
+        {
+          "outcome": "pass",
+          "seconds": 102.6,
+          "detail": null,
+          "tokens": 173923
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 78.6,
+          "detail": null,
+          "tokens": 57740
+        },
+        {
+          "outcome": "pass",
+          "seconds": 105.8,
+          "detail": null,
+          "tokens": 57866
+        },
+        {
+          "outcome": "pass",
+          "seconds": 50.7,
+          "detail": null,
+          "tokens": 34170
+        },
+        {
+          "outcome": "pass",
+          "seconds": 116.9,
+          "detail": null,
+          "tokens": 94537
+        }
+      ]
+    },
+    {
+      "id": "initials",
+      "title": "Initials",
+      "instruction": "Add `initials(name)` to textkit/case.py: the first letter of each word, in capitals, with nothing between them, such as `AL` for \"ada lovelace\".",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 139.1,
+          "detail": null,
+          "tokens": 59478
+        },
+        {
+          "outcome": "pass",
+          "seconds": 76.9,
+          "detail": null,
+          "tokens": 72175
+        },
+        {
+          "outcome": "pass",
+          "seconds": 113.1,
+          "detail": null,
+          "tokens": 72354
+        },
+        {
+          "outcome": "pass",
+          "seconds": 98.4,
+          "detail": null,
+          "tokens": 136203
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 78.5,
+          "detail": null,
+          "tokens": 58898
+        },
+        {
+          "outcome": "pass",
+          "seconds": 99.9,
+          "detail": null,
+          "tokens": 34634
+        },
+        {
+          "outcome": "pass",
+          "seconds": 62.5,
+          "detail": null,
+          "tokens": 46708
+        },
+        {
+          "outcome": "pass",
+          "seconds": 105.7,
+          "detail": null,
+          "tokens": 82622
+        }
+      ]
+    },
+    {
+      "id": "kebab",
+      "title": "Kebab case",
+      "instruction": "Add `kebab(text)` to textkit/case.py: the words of the text in lowercase, joined by hyphens, such as `hello-big-world` for \"Hello Big World\".",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 123.1,
+          "detail": null,
+          "tokens": 71623
+        },
+        {
+          "outcome": "pass",
+          "seconds": 68.4,
+          "detail": null,
+          "tokens": 59407
+        },
+        {
+          "outcome": "pass",
+          "seconds": 101.8,
+          "detail": null,
+          "tokens": 59407
+        },
+        {
+          "outcome": "pass",
+          "seconds": 65.3,
+          "detail": null,
+          "tokens": 59409
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 66.3,
+          "detail": null,
+          "tokens": 46787
+        },
+        {
+          "outcome": "pass",
+          "seconds": 118.7,
+          "detail": null,
+          "tokens": 70963
+        },
+        {
+          "outcome": "pass",
+          "seconds": 68.2,
+          "detail": null,
+          "tokens": 59206
+        },
+        {
+          "outcome": "pass",
+          "seconds": 98.8,
+          "detail": null,
+          "tokens": 58489
+        }
+      ]
+    },
+    {
+      "id": "line-count",
+      "title": "Line count",
+      "instruction": "Add `line_count(text)` to textkit/count.py: how many lines the text has, as an int: 0 for empty text, and a final newline doesn't start a new line.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 144.2,
+          "detail": null,
+          "tokens": 60738
+        },
+        {
+          "outcome": "pass",
+          "seconds": 136.3,
+          "detail": null,
+          "tokens": 176380
+        },
+        {
+          "outcome": "pass",
+          "seconds": 100.3,
+          "detail": null,
+          "tokens": 58995
+        },
+        {
+          "outcome": "pass",
+          "seconds": 59.6,
+          "detail": null,
+          "tokens": 58918
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 106.4,
+          "detail": null,
+          "tokens": 96306
+        },
+        {
+          "outcome": "pass",
+          "seconds": 126.9,
+          "detail": null,
+          "tokens": 83841
+        },
+        {
+          "outcome": "pass",
+          "seconds": 110.2,
+          "detail": null,
+          "tokens": 98378
+        },
+        {
+          "outcome": "pass",
+          "seconds": 118.7,
+          "detail": null,
+          "tokens": 71233
+        }
+      ]
+    },
+    {
+      "id": "only-ascii",
+      "title": "Only ASCII",
+      "instruction": "Add `only_ascii(text)` to textkit/clean.py: the text with every character that isn't ASCII removed.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 114.9,
+          "detail": null,
+          "tokens": 59020
+        },
+        {
+          "outcome": "pass",
+          "seconds": 66.4,
+          "detail": null,
+          "tokens": 59007
+        },
+        {
+          "outcome": "pass",
+          "seconds": 96.6,
+          "detail": null,
+          "tokens": 58781
+        },
+        {
+          "outcome": "pass",
+          "seconds": 63.0,
+          "detail": null,
+          "tokens": 58918
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 54.7,
+          "detail": null,
+          "tokens": 34181
+        },
+        {
+          "outcome": "pass",
+          "seconds": 102.3,
+          "detail": null,
+          "tokens": 57794
+        },
+        {
+          "outcome": "pass",
+          "seconds": 50.9,
+          "detail": null,
+          "tokens": 34267
+        },
+        {
+          "outcome": "pass",
+          "seconds": 85.6,
+          "detail": null,
+          "tokens": 34191
+        }
+      ]
+    },
+    {
+      "id": "snake",
+      "title": "Snake case",
+      "instruction": "Add `snake(text)` to textkit/case.py: the words of the text in lowercase, joined by underscores, such as `hello_big_world` for \"Hello Big World\".",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 130.8,
+          "detail": null,
+          "tokens": 97067
+        },
+        {
+          "outcome": "pass",
+          "seconds": 68.6,
+          "detail": null,
+          "tokens": 59412
+        },
+        {
+          "outcome": "pass",
+          "seconds": 97.1,
+          "detail": null,
+          "tokens": 59070
+        },
+        {
+          "outcome": "pass",
+          "seconds": 61.7,
+          "detail": null,
+          "tokens": 59156
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 80.1,
+          "detail": null,
+          "tokens": 71221
+        },
+        {
+          "outcome": "pass",
+          "seconds": 131.0,
+          "detail": null,
+          "tokens": 120935
+        },
+        {
+          "outcome": "pass",
+          "seconds": 53.1,
+          "detail": null,
+          "tokens": 34538
+        },
+        {
+          "outcome": "pass",
+          "seconds": 96.8,
+          "detail": null,
+          "tokens": 58423
+        }
+      ]
+    },
+    {
+      "id": "squeeze",
+      "title": "Squeeze spaces",
+      "instruction": "Add `squeeze(text)` to textkit/clean.py: the text with each run of whitespace turned into one space and none at either end.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 106.0,
+          "detail": null,
+          "tokens": 58849
+        },
+        {
+          "outcome": "pass",
+          "seconds": 73.9,
+          "detail": null,
+          "tokens": 59210
+        },
+        {
+          "outcome": "pass",
+          "seconds": 93.8,
+          "detail": null,
+          "tokens": 58623
+        },
+        {
+          "outcome": "pass",
+          "seconds": 62.6,
+          "detail": null,
+          "tokens": 59000
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 59.8,
+          "detail": null,
+          "tokens": 46168
+        },
+        {
+          "outcome": "pass",
+          "seconds": 186.4,
+          "detail": null,
+          "tokens": 204732
+        },
+        {
+          "outcome": "pass",
+          "seconds": 81.1,
+          "detail": null,
+          "tokens": 95146
+        },
+        {
+          "outcome": "fail",
+          "seconds": 96.2,
+          "detail": null,
+          "tokens": 46183
+        }
+      ]
+    },
+    {
+      "id": "strip-digits",
+      "title": "Strip digits",
+      "instruction": "Add `strip_digits(text)` to textkit/clean.py: the text with every digit 0 to 9 removed.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 99.8,
+          "detail": null,
+          "tokens": 58863
+        },
+        {
+          "outcome": "pass",
+          "seconds": 56.0,
+          "detail": null,
+          "tokens": 58454
+        },
+        {
+          "outcome": "pass",
+          "seconds": 93.9,
+          "detail": null,
+          "tokens": 58470
+        },
+        {
+          "outcome": "pass",
+          "seconds": 64.4,
+          "detail": null,
+          "tokens": 70906
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 49.4,
+          "detail": null,
+          "tokens": 34174
+        },
+        {
+          "outcome": "pass",
+          "seconds": 103.1,
+          "detail": null,
+          "tokens": 69961
+        },
+        {
+          "outcome": "pass",
+          "seconds": 57.7,
+          "detail": null,
+          "tokens": 57716
+        },
+        {
+          "outcome": "pass",
+          "seconds": 89.4,
+          "detail": null,
+          "tokens": 45958
+        }
+      ]
+    },
+    {
+      "id": "swap",
+      "title": "Swap case",
+      "instruction": "Add `swap(text)` to textkit/case.py: the text with every lowercase letter made uppercase and every uppercase letter made lowercase.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 110.9,
+          "detail": null,
+          "tokens": 71562
+        },
+        {
+          "outcome": "pass",
+          "seconds": 62.6,
+          "detail": null,
+          "tokens": 59166
+        },
+        {
+          "outcome": "pass",
+          "seconds": 99.5,
+          "detail": null,
+          "tokens": 59237
+        },
+        {
+          "outcome": "pass",
+          "seconds": 68.7,
+          "detail": null,
+          "tokens": 59537
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 84.2,
+          "detail": null,
+          "tokens": 59734
+        },
+        {
+          "outcome": "pass",
+          "seconds": 91.9,
+          "detail": null,
+          "tokens": 34598
+        },
+        {
+          "outcome": "pass",
+          "seconds": 54.2,
+          "detail": null,
+          "tokens": 34520
+        },
+        {
+          "outcome": "pass",
+          "seconds": 128.1,
+          "detail": null,
+          "tokens": 97098
+        }
+      ]
+    },
+    {
+      "id": "vowel-count",
+      "title": "Vowel count",
+      "instruction": "Add `vowel_count(text)` to textkit/count.py: how many vowels (a, e, i, o, u, in either case) the text has, as an int.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 99.9,
+          "detail": null,
+          "tokens": 58489
+        },
+        {
+          "outcome": "pass",
+          "seconds": 65.8,
+          "detail": null,
+          "tokens": 59168
+        },
+        {
+          "outcome": "pass",
+          "seconds": 98.8,
+          "detail": null,
+          "tokens": 58878
+        },
+        {
+          "outcome": "pass",
+          "seconds": 86.7,
+          "detail": null,
+          "tokens": 120019
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 67.4,
+          "detail": null,
+          "tokens": 58005
+        },
+        {
+          "outcome": "pass",
+          "seconds": 94.0,
+          "detail": null,
+          "tokens": 45999
+        },
+        {
+          "outcome": "pass",
+          "seconds": 55.2,
+          "detail": null,
+          "tokens": 46011
+        },
+        {
+          "outcome": "pass",
+          "seconds": 94.4,
+          "detail": null,
+          "tokens": 58016
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "headline": {
+      "n_pairs": 40,
+      "pass_with": 1.0,
+      "pass_without": 0.925,
+      "diff": 0.07499999999999996,
+      "ci_low": -0.02547209243373645,
+      "ci_high": 0.19864233524310537
+    },
+    "verdict": "inconclusive",
+    "mde": 0.16500242900794942,
+    "required_pairs": 194,
+    "by_kind": {
+      "typical": {
+        "n_pairs": 40,
+        "pass_with": 1.0,
+        "pass_without": 0.925,
+        "diff": 0.07499999999999996,
+        "ci_low": -0.02547209243373645,
+        "ci_high": 0.19864233524310537
+      }
+    },
+    "synthetic": null,
+    "errored": 0,
+    "broken": 0,
+    "total": 80,
+    "unreliable": false,
+    "cost_with": 0.0,
+    "cost_without": 0.0
+  },
+  "ledger": {
+    "total": 80,
+    "with": 40,
+    "without": 40,
+    "pairs": 40,
+    "logs_read": 40,
+    "clean": 80,
+    "timed_out": 0,
+    "errored": 0,
+    "broken": 0
+  },
+  "rig": {
+    "score": 17,
+    "band": "not_proven",
+    "tone": "warning",
+    "label": "Not proven — more pairs would settle the cut (40 so far)",
+    "reason": "No cut in tokens per solved task shown",
+    "provisional": false,
+    "pairs": 40,
+    "parts": [
+      {
+        "id": "lift",
+        "name": "Lift",
+        "weight": 0.6,
+        "score": 0.0,
+        "detail": "no cut in tokens per solved task shown (the interval reaches +27%)",
+        "counted": true,
+        "weight_used": 0.7059
+      },
+      {
+        "id": "cost",
+        "name": "Cost",
+        "weight": 0.0,
+        "score": null,
+        "detail": "in Lift: Tokens per solved task is what is measured",
+        "folded": true,
+        "counted": false,
+        "weight_used": 0.0
+      },
+      {
+        "id": "followed",
+        "name": "Followed",
+        "weight": 0.15,
+        "score": 95.0,
+        "detail": "opened the skill in 38 of the 40 \"with\" trials whose logs could be read",
+        "counted": true,
+        "weight_used": 0.1765
+      },
+      {
+        "id": "holds_up",
+        "name": "Holds up",
+        "weight": 0.15,
+        "score": null,
+        "detail": "This bench has no held-out tasks, so it's unknown whether this holds on unseen tasks",
+        "counted": false,
+        "weight_used": 0.0
+      },
+      {
+        "id": "reliable",
+        "name": "Reliable",
+        "weight": 0.1,
+        "score": 100.0,
+        "detail": "80 of 80 trials ran cleanly (40 with, 40 without)",
+        "counted": false,
+        "note": "counts once a cut is shown and the pass rate holds",
+        "weight_used": 0.1176
+      }
+    ],
+    "gates": [
+      {
+        "id": "not_cut",
+        "cap": 49,
+        "text": "Capped at 49: no cut in tokens per solved task shown (the interval reaches 0).",
+        "binding": false
+      }
+    ],
+    "formula": {
+      "text": "60% × 0 (Lift takes Cost's 20%: the measure is tokens) + 15% × 95 + 10% × 0 (Reliable: no credit yet) = 14.2; ÷ 85% (weights rescaled to the measured parts; holds up not measured) = 16.8; rounded: 17",
+      "measured_weight": 0.85,
+      "raw": 16.76,
+      "not_measured": [
+        "holds up"
+      ]
+    },
+    "ledger": {
+      "total": 80,
+      "with": 40,
+      "without": 40,
+      "pairs": 40,
+      "logs_read": 40,
+      "clean": 80,
+      "timed_out": 0,
+      "errored": 0,
+      "broken": 0
+    },
+    "ledger_text": "80 trials (40 with, 40 without) · 40 complete pairs · 80 ran cleanly · logs read for 40 of the 40 \"with\" trials",
+    "verdict": {
+      "id": "cant",
+      "word": "Can't tell yet",
+      "tone": "neutral",
+      "reason": "Tokens per solved task: with 70.9k vs without 68.4k (+4%, 95% interval -17% to +27%): the cut isn't settled.",
+      "next": "Next: run more pairs (40 so far).",
+      "facts": [
+        "Quality: 40 of 40 passed with, 37 of 40 passed without (+7 pts, 95% interval -3 to +20)",
+        "Cost: nothing (a local model)",
+        "Time: 1.5 min vs 89 s per trial (1.0×)",
+        "Reliability: with, all 40 ran cleanly; without, all 40 ran cleanly"
+      ]
+    },
+    "quality": "pass_rate",
+    "metric": {
+      "id": "tokens",
+      "name": "Tokens per solved task",
+      "n": 40,
+      "margin_pts": 10,
+      "guard": "Pass rate: 40 of 40 passed with vs 37 of 40 passed without (+7 pts; at worst -3 pts, within the 10-pt margin)",
+      "noninferior": true,
+      "with": 70854.875,
+      "without": 68431.0,
+      "ratio": 1.0354207157574784,
+      "low": 0.8328790611302388,
+      "high": 1.265250678289281,
+      "headline": "Tokens per solved task: with 70.9k vs without 68.4k (+4%, 95% interval -17% to +27%)"
+    }
+  },
+  "metric": "tokens",
+  "took_s": 7371
+}

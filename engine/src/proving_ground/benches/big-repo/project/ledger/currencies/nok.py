@@ -1,0 +1,5 @@
+"""NOK."""
+
+CODE = "NOK"
+DECIMALS = 2
+SYMBOL = "NO"

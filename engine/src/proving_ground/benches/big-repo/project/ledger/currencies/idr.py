@@ -1,0 +1,5 @@
+"""IDR."""
+
+CODE = "IDR"
+DECIMALS = 0
+SYMBOL = "ID"

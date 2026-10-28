@@ -1,0 +1,29 @@
+id: data
+name: Clean data and answer questions
+disciplines: [data]
+discipline: data
+summary: A messy orders file (mixed date formats, currency strings, duplicates, blanks). Clean it, then answer questions from it; checks recompute the answers.
+workflow:
+  id: data
+  name: Data question
+  success: Clean data and exact answers.
+  steps:
+    - {name: inspect, type: research, why: See what is wrong with the data}
+    - {name: clean, type: data, why: Fix it by the rules}
+    - {name: answer, type: data, why: Compute the answer}
+scenarios:
+  - id: clean
+    kind: typical
+    step: clean
+    title: Clean the orders file
+    instruction: "Write clean.py that reads data/orders.csv and writes out/orders_clean.csv following the rules in README.md. Run it so the output file exists."
+  - id: monthly
+    kind: typical
+    step: answer
+    title: Revenue by month
+    instruction: "Using the cleaning rules in README.md, write out/monthly.json: an object mapping 'YYYY-MM' to that month's revenue in cents (integer), for every month with orders."
+  - id: top-customer
+    kind: edge
+    step: answer
+    title: Best customer, refunds included
+    instruction: "Using the cleaning rules in README.md, write out/top_customer.json as {\"customer\": name, \"cents\": total}: the customer with the highest net total after refunds (negative amounts). Names are compared case- and space-insensitively."

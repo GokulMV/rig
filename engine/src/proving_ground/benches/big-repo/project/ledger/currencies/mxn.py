@@ -1,0 +1,5 @@
+"""MXN."""
+
+CODE = "MXN"
+DECIMALS = 2
+SYMBOL = "MX"

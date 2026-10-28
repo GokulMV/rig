@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rig · Test Changes to Your Coding Workflow</title>
+<meta name="description" content="Rig is a free, open-source app that runs the same coding tasks with and without a skill, hook, model or CLAUDE.md rule, each in its own sandbox, and shows what really changed, with a 95% interval.">
+<meta property="og:site_name" content="Rig">
+<meta property="og:title" content="Rig: did that change to your coding agent help?">
+<meta property="og:description" content="Run the same tasks with and without a change to your coding agent, each in its own sandbox, and see what really changed, with a 95% interval. Free, open source, runs on your machine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rig-it.dev/">
+<meta property="og:image" content="https://rig-it.dev/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rig: did that change to your agent help? A real run: 9 of 10 passed with the skill, 2 of 10 without, +70 pts, Rig 78.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rig: did that change to your coding agent help?">
+<meta name="twitter:description" content="Run the same tasks with and without the change, each in its own sandbox, and see what really changed. Free and open source.">
+<meta name="twitter:image" content="https://rig-it.dev/img/og.jpg">
+<link rel="canonical" href="https://rig-it.dev/">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Rig for AI agents">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Rig",
+  "url": "https://rig-it.dev/",
+  "description": "A free, open-source app that tests whether a change to an AI coding agent really helps: it runs the same coding tasks with and without the change, each in its own Docker sandbox, and reports the difference with a 95% interval.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "macOS, Linux",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "codeRepository": "https://github.com/GokulMV/rig",
+  "sameAs": [
+    "https://github.com/GokulMV/rig"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Gokul MV"
+  },
+  "keywords": "AI coding agents, Claude Code, Codex, agent evals, skills, MCP, CLAUDE.md, A/B testing, confidence interval, open source",
+  "image": "https://rig-it.dev/img/og.jpg"
+}
+</script>
+<meta name="theme-color" content="#f6f8f9">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5.5' fill='%231b6c80'/%3E%3Cg transform='translate%283.6 3.6%29 scale%280.7%29' fill='none' stroke='%23fff' stroke-width='2.2'%3E%3Cline x1='12' y1='3' x2='12' y2='21'/%3E%3Crect x='9' y='3' width='6' height='5'/%3E%3Crect x='3' y='10' width='6' height='5'/%3E%3Crect x='15' y='10' width='6' height='5'/%3E%3Cline x1='9' y1='12.5' x2='15' y2='12.5'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url(fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); } /* code blocks only */
+
+/* ---------- The system: the app's colours, one grid, one spacing scale, five text sizes ---------- */
+:root {
+  --ground: #f6f8f9;
+  --panel: #ebeff1;      /* cards, code, the hero's right half */
+  --frame: #dde4e7;      /* the frame around a screenshot */
+  --surface: #ffffff;
+  --ink: #131416;
+  --soft: #5d5f60;
+  --accent: #1b6c80;
+  --accent-deep: #155766;
+  --accent-tint: #e7f1f3;
+  --positive: #1e7b4f;
+  --warning: #92400e;
+  --border: #e8eaec;
+
+  --font: "IBM Plex Sans", Inter, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace; /* code blocks only */
+
+  /* Five sizes. */
+  --t-display: clamp(36px, 3.6vw, 56px);
+  --t-h2: clamp(28px, 2.4vw, 36px);
+  --t-h3: 20px;
+  --t-body: 17px;
+  --t-small: 14px;
+
+  /* One grid: the same margin and gutter everywhere, and twelve columns between. */
+  --margin: clamp(20px, 4vw, 80px);
+  --gutter: clamp(16px, 2vw, 32px);
+
+  /* One spacing scale. */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 40px;
+  --s5: 64px;
+  --section: clamp(72px, 8vw, 128px);
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 400 var(--t-body) / 1.55 var(--font); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, p, figure, ul, ol, dl { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+h1 { font-size: var(--t-display); line-height: 1.06; letter-spacing: -0.03em; }
+h2 { font-size: var(--t-h2); line-height: 1.15; }
+h3 { font-size: var(--t-h3); line-height: 1.3; letter-spacing: -0.01em; }
+p { max-width: 64ch; }
+code { font-family: var(--mono); font-size: 0.9em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--accent); color: #fff; }
+.num { font-variant-numeric: tabular-nums; }
+.soft { color: var(--soft); }
+.small { font-size: var(--t-small); }
+
+/* The grid every section is built on. */
+.wrap { padding-inline: var(--margin); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+.grid > * { min-width: 0; }
+.span-12 { grid-column: 1 / -1; }
+.span-7 { grid-column: 1 / span 7; }
+.left { grid-column: 1 / span 5; }
+.right { grid-column: 7 / span 6; }
+.third { grid-column: span 4; }
+.half { grid-column: span 6; }
+
+.section { padding-block: var(--section); }
+.section + .section { padding-top: 0; }
+.head { display: grid; gap: var(--s2); margin-bottom: var(--s5); }
+.head p { font-size: var(--t-h3); line-height: 1.45; color: var(--soft); max-width: 52ch; }
+
+/* One button style, two weights. */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px;
+  border-radius: var(--radius); border: 0; background: var(--accent); color: #fff;
+  font: 500 var(--t-body) var(--font); text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background-color 160ms var(--ease), transform 160ms var(--ease);
+}
+.btn:hover { background: var(--accent-deep); }
+.btn:active { transform: scale(0.97); }
+.btn--quiet { background: var(--panel); color: var(--ink); }
+.btn--quiet:hover { background: var(--frame); }
+.btn--small { min-height: 40px; padding: 0 16px; font-size: 15px; }
+
+/* One screenshot style: the picture in a tinted frame, with its caption. */
+.shot { padding: var(--s2); border-radius: var(--radius-lg); background: var(--frame); }
+.shot img { width: 100%; border-radius: 6px; }
+.shot figcaption { margin-top: var(--s2); font-size: var(--t-small); color: var(--soft); }
+
+/* One code style. */
+.code { position: relative; margin: 0; padding: var(--s3); padding-right: 96px; border-radius: var(--radius); background: var(--panel); overflow-x: auto; }
+.code code { display: block; font-size: 14px; line-height: 1.75; white-space: pre; }
+.code .c { color: var(--soft); }
+.copy {
+  position: absolute; top: 12px; right: 12px; min-height: 34px; padding: 0 14px; border: 0; border-radius: 6px;
+  background: var(--surface); font: 500 var(--t-small) var(--font); color: var(--ink); cursor: pointer;
+  transition: background-color 160ms var(--ease);
+}
+.copy:hover { background: var(--accent-tint); }
+
+/* ---------- Header ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); height: 76px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 19px; text-decoration: none; }
+.brand svg { width: 28px; height: 28px; }
+.nav { display: flex; align-items: center; gap: var(--s4); }
+.nav a:not(.btn) { font-size: 15px; font-weight: 500; text-decoration: none; transition: color 160ms var(--ease); }
+.nav a:not(.btn):hover { color: var(--accent); }
+
+/* ---------- Hero: the claim on the left, a live result on the right ---------- */
+.hero { align-items: center; padding-block: var(--s5) var(--section); }
+.hero-wrap + .section { padding-top: 0; }
+.hero .left { display: grid; gap: var(--s3); }
+.hero__lead { font-size: var(--t-h3); line-height: 1.5; color: var(--soft); max-width: 46ch; }
+.hero__acts { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s1); }
+.hero__note { font-size: var(--t-small); color: var(--soft); }
+/* The card stands on its own on the right, ending at the page's right margin. */
+.hero .right { grid-column: 8 / span 5; display: grid; justify-items: end; }
+
+/* The result card: a fragment of the app, with a working pairs control. */
+.res { width: min(100%, 520px); padding: var(--s4); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); font-size: 14px; line-height: 1.45; } /* the app's own card */
+.tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 13px; font-weight: 500; background: #dcfae5; color: #04250e; }
+.tag[data-v="inconclusive"] { background: #fffbeb; color: var(--warning); }
+.res__what { margin-top: 10px; color: var(--soft); }
+.res__arms { display: grid; gap: 10px; margin: var(--s2) 0; }
+.arm { display: grid; grid-template-columns: 120px 1fr 104px; align-items: center; gap: 12px; }
+.arm b { font-weight: 500; text-align: right; }
+.bar { height: 8px; border-radius: 4px; background: #eef0f2; overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 4px; background: #c8cdd1; transition: width 320ms var(--ease); }
+.arm--with .bar i { background: var(--accent); }
+.res__head { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 12px; padding-top: var(--s2); border-top: 1px solid var(--border); } /* the app's own card */
+.res__head #ci { grid-column: 1 / -1; margin-top: 2px; min-height: 2.9em; }
+.diff { font-size: 30px; font-weight: 500; letter-spacing: -0.02em; color: var(--positive); }
+.diff[data-v="inconclusive"] { color: var(--soft); }
+.why { margin-top: 10px; min-height: 2.9em; font-size: 13px; color: var(--soft); }
+.diff small { font-size: 15px; }
+.res__head .tag { justify-self: end; white-space: nowrap; }
+.axis { position: relative; height: 28px; margin-top: 12px; }
+.axis::before { content: ""; position: absolute; inset: 12px 0 auto; height: 1px; background: var(--border); } /* the app's interval axis */
+.axis__zero { position: absolute; left: 50%; top: 2px; width: 1px; height: 22px; background: var(--ink); }
+.axis__band { position: absolute; top: 9px; height: 7px; border-radius: 4px; background: var(--positive); transition: left 320ms var(--ease), width 320ms var(--ease); }
+.axis__dot { position: absolute; top: 6px; width: 13px; height: 13px; margin-left: -6.5px; border-radius: 50%; background: var(--surface); border: 2px solid var(--positive); transition: left 320ms var(--ease), opacity 200ms var(--ease); }
+/* Until Rig calls it, the graph shows only the range: no point says where in it the change is. */
+.axis__dot[data-v="inconclusive"] { opacity: 0; }
+.axis [data-v="inconclusive"] { border-color: #a86f0c; }
+.axis__band[data-v="inconclusive"] { background: #a86f0c; }
+.ticks { display: flex; justify-content: space-between; font-size: 13px; color: var(--soft); }
+.pairs { margin-top: var(--s3); padding-top: var(--s2); border-top: 1px solid var(--border); } /* the app's own card */
+.pairs label { display: flex; justify-content: space-between; font-weight: 500; }
+.pairs input { width: 100%; height: 24px; margin: 8px 0 2px; accent-color: var(--accent); cursor: pointer; }
+.pairs p { font-size: 13px; color: var(--soft); }
+.score { display: flex; align-items: baseline; gap: 10px; margin-top: 14px; }
+.score strong { font-size: 22px; font-weight: 500; white-space: nowrap; }
+.score span { color: var(--soft); min-height: 2.9em; }
+
+/* ---------- How it works: the steps on the left, the app on the right ---------- */
+.how { align-items: start; }
+.how .left .head { margin-bottom: var(--s4); }
+.steps { display: grid; gap: var(--s4); }
+.step { display: grid; gap: var(--s1); align-content: start; }
+
+/* ---------- Results: two runs on shared rows ---------- */
+.runs { grid-template-rows: repeat(4, auto); row-gap: 0; }
+.run { grid-row: span 4; display: grid; grid-template-rows: subgrid; row-gap: var(--s3); padding: var(--s4); border-radius: var(--radius-lg); background: var(--panel); }
+.run__meta { font-size: var(--t-small); color: var(--soft); margin-top: calc(var(--s1) * -2); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); align-items: start; }
+.stats strong { display: block; font-size: var(--t-h2); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.stats span { display: block; margin-top: var(--s1); font-size: var(--t-small); line-height: 1.45; color: var(--soft); }
+.good { color: var(--positive); }
+.warn { color: var(--warning); }
+.run .shot { padding: 12px; background: var(--frame); }
+.run .shot img { aspect-ratio: 1800 / 1045; object-fit: cover; object-position: left top; }
+.runs__src { margin-top: var(--s4); font-size: var(--t-small); color: var(--soft); }
+.link { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.link:hover { color: var(--accent); }
+
+/* ---------- What you can measure: six items on three columns ---------- */
+.items { row-gap: var(--s5); }
+.item { display: grid; gap: var(--s1); align-content: start; }
+
+/* ---------- Install: the words on the left, the commands on the right ---------- */
+.install .left { display: grid; gap: var(--s3); align-content: start; }
+.install .left p { max-width: 46ch; }
+.install .right { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s3); }
+.cmd h3 { margin-bottom: var(--s2); }
+
+/* ---------- Footer: one band on the same grid ---------- */
+.foot { padding-block: var(--s5); background: var(--panel); }
+.foot .grid { align-items: start; row-gap: var(--s4); }
+.foot__say { grid-column: 1 / span 5; display: grid; gap: var(--s2); }
+.foot__nav { grid-column: 7 / span 4; display: grid; grid-template-columns: repeat(2, max-content); gap: var(--s1) var(--s4); }
+.foot__nav a { font-size: 15px; text-decoration: none; }
+.foot__nav a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.foot__go { grid-column: 11 / span 2; justify-self: end; }
+
+/* ---------- Motion: parts rise in once; nothing else moves ---------- */
+.js [data-in] { opacity: 0; transform: translateY(16px); }
+.js [data-in].in { opacity: 1; transform: none; transition: opacity 600ms var(--ease), transform 600ms var(--ease); transition-delay: calc(var(--i, 0) * 70ms); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-in] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ---------- Narrower screens: the same grid, fewer columns used ---------- */
+@media (max-width: 1100px) {
+  .third { grid-column: span 6; }
+  .foot__say { grid-column: 1 / span 6; }
+  .foot__nav { grid-column: 7 / span 6; }
+  .foot__go { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 900px) {
+  .left, .right, .half, .span-7, .third, .foot__say, .foot__nav { grid-column: 1 / -1; }
+  .hero { row-gap: var(--s4); padding-top: var(--s3); }
+  .hero .right { grid-column: 1 / -1; justify-items: stretch; }
+  .res { width: 100%; }
+  .runs { grid-template-rows: none; row-gap: var(--s3); }
+  .run { grid-row: auto; grid-template-rows: none; padding: var(--s3); }
+  .install .right { margin-top: var(--s4); }
+  .nav a:not(.btn) { display: none; }
+}
+@media (max-width: 560px) {
+  .stats { grid-template-columns: 1fr; gap: var(--s2); }
+  .arm { grid-template-columns: 1fr auto; gap: 6px 12px; }
+  .arm .bar { grid-column: 1 / -1; grid-row: 2; }
+  .res { padding: var(--s3); }
+  .foot__nav { grid-template-columns: 1fr; }
+  /* The copy button sits above the commands, and long lines wrap instead of running to the edge. */
+  .code { padding: 56px var(--s2) var(--s2); }
+  .code code { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+
+<header class="wrap">
+  <div class="top">
+    <a class="brand" href="./" aria-label="Rig, home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.5" fill="#1b6c80"/><g transform="translate(3.6 3.6) scale(0.7)" fill="none" stroke="#fff" stroke-width="2.2"><line x1="12" y1="3" x2="12" y2="21"/><rect x="9" y="3" width="6" height="5"/><rect x="3" y="10" width="6" height="5"/><rect x="15" y="10" width="6" height="5"/><line x1="9" y1="12.5" x2="15" y2="12.5"/></g></svg>
+      Rig
+    </a>
+    <nav class="nav" aria-label="Page">
+      <a href="#how">How It Works</a>
+      <a href="#results">Results</a>
+      <a href="#install">Install</a>
+      <a class="btn btn--small" href="https://github.com/GokulMV/rig">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero-wrap">
+    <div class="grid hero">
+      <div class="left">
+        <h1>Did That Change to Your Agent Help?</h1>
+        <p class="hero__lead">Rig is a free, open-source app that runs the same coding tasks with and without a skill, hook, model or CLAUDE.md rule, each in its own sandbox, and shows what really changed, with a 95% interval.</p>
+        <div class="hero__acts">
+          <a class="btn" href="https://github.com/GokulMV/rig">Get Rig on GitHub</a>
+          <a class="btn btn--quiet" href="#results">See Two Real Runs</a>
+        </div>
+        <p class="hero__note">MIT licence · runs on your machine · free on a local model</p>
+      </div>
+      <div class="right">
+        <section class="res" data-ui aria-label="A real run: what one skill changed">
+          <span class="tag">Real Run</span>
+          <p class="res__what">10 coding tasks, each run with and without the skill <b>price-tags-style</b> on Qwen3.5 9B through Claude Code, locally and for free.</p>
+          <div class="res__arms">
+            <div class="arm"><span>Without the Skill</span><span class="bar"><i id="barWo" style="width:20%"></i></span><b class="num" id="numWo">2 of 10 passed</b></div>
+            <div class="arm arm--with"><span>With the Skill</span><span class="bar"><i id="barW" style="width:90%"></i></span><b class="num" id="numW">9 of 10 passed</b></div>
+          </div>
+          <div class="res__head">
+            <span class="diff num" id="diff" data-v="helps">+70 <small>pts</small></span>
+            <span class="tag" id="verdict" data-v="helps">Helps</span>
+            <span class="soft num" id="ci">95% interval +14 to +91</span>
+          </div>
+          <div class="axis" aria-hidden="true">
+            <span class="axis__zero"></span>
+            <span class="axis__band" id="band" data-v="helps" style="left:57%;width:38.5%"></span>
+            <span class="axis__dot" id="dot" data-v="helps" style="left:85%"></span>
+          </div>
+          <div class="ticks num" aria-hidden="true"><span>−100</span><span>0</span><span>+100 pts</span></div>
+          <p class="why" id="why">The whole interval is above 0, so the skill helps. How much is still uncertain.</p>
+          <div class="pairs">
+            <label for="n"><span>Pairs Counted</span><span class="num" id="nOut">10 of 10</span></label>
+            <input id="n" type="range" min="1" max="10" step="0.01" value="10" aria-describedby="nNote" aria-valuetext="10 of 10 pairs">
+            <p id="nNote">Drag left to count fewer tasks and watch the interval widen.</p>
+          </div>
+          <div class="score"><strong class="num" id="score">Rig 78</strong><span id="scoreWhy">Works, but the lift could be as small as +14.</span></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="how" aria-labelledby="how-title">
+    <div class="grid how">
+      <div class="left">
+        <div class="head" data-in>
+          <h2 id="how-title">How It Works</h2>
+          <p>Rig runs every task twice, once with the change and once without, and compares the pairs.</p>
+        </div>
+        <ol class="steps">
+          <li class="step" data-in>
+            <h3>Pick the Change</h3>
+            <p>A skill, a hook, an MCP server, a CLAUDE.md rule, a model, a workflow step, or a change to your code.</p>
+          </li>
+          <li class="step" data-in style="--i:1">
+            <h3>Run It Both Ways</h3>
+            <p>Each task runs with and without the change, each time in its own Docker sandbox. Checks run with no network.</p>
+          </li>
+          <li class="step" data-in style="--i:2">
+            <h3>Read the Result</h3>
+            <p>Rig reports the difference with a 95% interval and a Rig score from 0 to 100. When the evidence is thin, it says so.</p>
+          </li>
+        </ol>
+      </div>
+      <figure class="shot right" data-in>
+        <img src="img/build.jpg" width="1800" height="1125" loading="lazy" alt="Rig's Build page: a seven-step workflow on a canvas, from Clarify the Task to Write the PR, with each step's model and an estimate before any run.">
+        <figcaption>In the app, Build: a workflow's steps, models, skills and rules, each a part you can swap.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap section" id="results" aria-labelledby="results-title">
+    <div class="grid">
+      <div class="head span-7" data-in>
+        <h2 id="results-title">Two Real Runs</h2>
+        <p>Both ran for free on Qwen3.5 9B through Claude Code. One skill clearly helped; the other may have cost tokens, and Rig said it couldn't tell.</p>
+      </div>
+    </div>
+    <div class="grid runs">
+      <article class="run half" data-in>
+        <h3>A House-Style Skill for Price Labels</h3>
+        <p class="run__meta">10 tasks, once each way · scored on the pass rate · 27 October 2026</p>
+        <ul class="stats">
+          <li><strong class="good num">9 of 10</strong><span>passed with the skill; 2 of 10 without</span></li>
+          <li><strong class="good num">+70 pts</strong><span>95% interval +14 to +91</span></li>
+          <li><strong class="num">Rig 78</strong><span>works, but the lift needs work</span></li>
+        </ul>
+        <figure class="shot"><img src="img/result.jpg" width="1800" height="1125" loading="lazy" alt="The first run in Rig: ten tasks with and without the skill, 9 of 10 passed with it and 2 of 10 without, +70 pts with a 95% interval of +14 to +91, and a Rig score of 78.">
+          <figcaption>In the app: each task both ways, the interval, and how the score was made.</figcaption></figure>
+      </article>
+      <article class="run half" data-in style="--i:1">
+        <h3>A Skill Meant to Save Tokens</h3>
+        <p class="run__meta">40 pairs (10 tasks × 4) · scored on tokens per solved task · 28 October 2026</p>
+        <ul class="stats">
+          <li><strong class="num">40 of 40</strong><span>passed with the skill; 37 of 40 without</span></li>
+          <li><strong class="warn num">+4%</strong><span>tokens per solved task; interval −17% to +27%</span></li>
+          <li><strong class="warn num">Rig 17</strong><span>not proven, so no saving is credited</span></li>
+        </ul>
+        <figure class="shot"><img src="img/tokens.jpg" width="1800" height="1045" loading="lazy" alt="The token run in Rig: 40 of 40 passed with the skill and 37 of 40 without, tokens per solved task 70.9k with against 68.4k without, and a Rig score of 17.">
+          <figcaption>In the app: the saving, its pass-rate guard, and why the score stays low.</figcaption></figure>
+      </article>
+    </div>
+    <p class="runs__src" data-in>Every number above comes from two files in the repo: <a class="link" href="https://github.com/GokulMV/rig/blob/main/engine/src/proving_ground/tutorial/recorded.json">recorded.json</a> and <a class="link" href="https://github.com/GokulMV/rig/blob/main/engine/src/proving_ground/tutorial/tokens/recorded.json">tokens/recorded.json</a>.</p>
+  </section>
+
+  <section class="wrap section" id="measure" aria-labelledby="measure-title">
+    <div class="grid">
+      <div class="head span-7" data-in>
+        <h2 id="measure-title">What You Can Measure</h2>
+        <p>Each one is a single part of the agent, swapped in and out on the same tasks.</p>
+      </div>
+    </div>
+    <ul class="grid items">
+      <li class="third item" data-in><h3>Skills</h3><p>Each task runs with and without the skill's folder, and the score checks that the agent opened it.</p></li>
+      <li class="third item" data-in style="--i:1"><h3>Hooks, MCP Servers and Rules</h3><p>These are measured the same way as a skill. For CLAUDE.md, the “without” side is the committed file.</p></li>
+      <li class="third item" data-in style="--i:2"><h3>Code Changes</h3><p>The tasks run on the code before and after your change, each side exported from git. Your checkout never switches.</p></li>
+      <li class="third item" data-in><h3>Tokens, Cost or Time</h3><p>A run can be scored on a saving per solved task, with the pass rate as a guard against getting worse.</p></li>
+      <li class="third item" data-in style="--i:1"><h3>Whole Workflows</h3><p>Build one on a canvas or start from one of 23 architectures, then run it on one of 20 built-in benches.</p></li>
+      <li class="third item" data-in style="--i:2"><h3>Local Models</h3><p>Ollama, LM Studio, llama.cpp, vLLM and Jan run for free, with no key and no budget.</p></li>
+    </ul>
+  </section>
+
+  <section class="wrap section install" id="install" aria-labelledby="install-title">
+    <div class="grid">
+      <div class="left" data-in>
+        <h2 id="install-title">Install</h2>
+        <p>Rig is a Python engine that serves a web app on 127.0.0.1, so nothing is hosted. You need Python 3.12 or newer, uv, Node 22 or newer, git, and Docker with Compose v2.</p>
+        <p>It works with Claude Code, Codex, OpenCode and Gemini. A paid run always shows an estimate first and stops at the budget you set.</p>
+      </div>
+      <div class="right">
+        <div class="cmd" data-in>
+          <h3>Install and Check</h3>
+          <pre class="code"><code id="c1">git clone https://github.com/GokulMV/rig
+cd rig/engine && uv sync
+(cd ../web && npm ci && npm run build)
+uv run rig doctor</code><button class="copy" type="button" data-copy="c1">Copy</button></pre>
+        </div>
+        <div class="cmd" data-in style="--i:1">
+          <h3>Start It on Your Repo</h3>
+          <pre class="code"><code id="c2">uv run rig serve --root ~/code/my-app
+<span class="c"># then open http://127.0.0.1:7357</span></code><button class="copy" type="button" data-copy="c2">Copy</button></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <div class="grid">
+    <div class="foot__say">
+      <a class="brand" href="./" aria-label="Rig, home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.5" fill="#1b6c80"/><g transform="translate(3.6 3.6) scale(0.7)" fill="none" stroke="#fff" stroke-width="2.2"><line x1="12" y1="3" x2="12" y2="21"/><rect x="9" y="3" width="6" height="5"/><rect x="3" y="10" width="6" height="5"/><rect x="15" y="10" width="6" height="5"/><line x1="9" y1="12.5" x2="15" y2="12.5"/></g></svg>
+        Rig
+      </a>
+      <p>Free, open source, and runs on your machine.</p>
+      <p class="small soft">MIT licence · © 2026 Gokul MV · set in IBM Plex Sans</p>
+    </div>
+    <nav class="foot__nav" aria-label="Project">
+      <a href="https://github.com/GokulMV/rig#readme">README</a>
+      <a href="https://github.com/GokulMV/rig/blob/main/docs/explained.md">How It Works, Explained</a>
+      <a href="https://github.com/GokulMV/rig/blob/main/SECURITY.md">Security</a>
+      <a href="https://github.com/GokulMV/rig/blob/main/CONTRIBUTING.md">Contributing</a>
+      <a href="https://github.com/GokulMV/rig/issues">Open an Issue</a>
+    </nav>
+    <a class="btn foot__go" href="https://github.com/GokulMV/rig">Get Rig on GitHub</a>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // The recorded run (engine/src/proving_ground/tutorial/recorded.json): the engine's own
+  // stats.summarize() on the first n tasks' trials. n = 10 is the run as recorded.
+  // Each row: n, passed with, passed without, difference, interval low, interval high, helps (1) or can't tell (0).
+  const PAIRS = [[1,1,0,100,-12,100,0],[2,2,0,100,7,100,1],[3,2,1,33,-58,88,0],[4,3,1,50,-40,91,0],[5,4,1,60,-25,93,0],[6,5,1,67,-13,94,0],[7,6,1,71,-3,95,0],[8,7,2,62,0,88,1],[9,8,2,67,8,90,1],[10,9,2,70,14,91,1]];
+  const $ = (id) => document.getElementById(id);
+  const sign = (v) => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v);
+  const pct = (v) => (v + 100) / 2;
+  let shown = 10;
+  const snap = (e) => { e.target.value = shown; };
+  $("n").addEventListener("change", snap);
+  $("n").addEventListener("keydown", (e) => {  // arrow keys move a whole pair at a time
+    const d = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1 }[e.key];
+    if (!d) return;
+    e.preventDefault();
+    e.target.value = Math.min(10, Math.max(1, shown + d));
+    e.target.dispatchEvent(new Event("input"));
+  });
+  $("n").addEventListener("input", (e) => {
+    const n = Math.round(Number(e.target.value));
+    e.target.setAttribute("aria-valuetext", `${n} of 10 pairs`);
+    if (n === shown) return;
+    shown = n;
+    const [, w, wo, diff, low, high, helps] = PAIRS[n - 1];
+    const v = helps && n >= 10 ? "helps" : "inconclusive";
+    $("nOut").textContent = `${n} of 10`;
+    $("barWo").style.width = `${(wo / n) * 100}%`;
+    $("barW").style.width = `${(w / n) * 100}%`;
+    $("numWo").textContent = `${wo} of ${n} passed`;
+    $("numW").textContent = `${w} of ${n} passed`;
+    // The big number is what Rig stands behind: the difference once it helps, else the range it could be in.
+    const call = helps && n >= 10;
+    $("diff").innerHTML = call ? `${sign(diff)} <small>pts</small>` : `${sign(low)} to ${sign(high)} <small>pts</small>`;
+    $("ci").textContent = call
+      ? `95% interval ${sign(low)} to ${sign(high)}`
+      : `95% interval on ${n === 1 ? "1 pair" : `${n} pairs`}: the change could be anywhere in it.`;
+    $("verdict").textContent = helps && n >= 10 ? "Helps" : "Can't Tell Yet";
+    $("why").textContent = !helps
+      ? `The interval reaches below 0, so ${n === 1 ? "one pair" : `${n} pairs`} can't tell the skill from chance.`
+      : n < 10
+        ? `Looks like it helps, but on ${n} pairs; 10 are needed to call it.`
+        : "The whole interval is above 0, so the skill helps. How much is still uncertain.";
+    for (const id of ["diff", "verdict", "band", "dot"]) $(id).dataset.v = v;
+    $("band").style.left = `${pct(low)}%`;
+    $("band").style.width = `${pct(high) - pct(low)}%`;
+    $("dot").style.left = `${pct(diff)}%`;
+    $("score").textContent = n === 10 ? "Rig 78" : "Rig ≤ 59";
+    $("scoreWhy").textContent = n === 10
+      ? "Works, but the lift could be as small as +14."
+      : "Provisional: capped until at least 10 pairs are run.";
+  });
+
+  document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+    const text = $(b.dataset.copy).textContent.split("\n").filter((l) => !l.trim().startsWith("#")).join("\n");
+    try { await navigator.clipboard.writeText(text); b.textContent = "Copied"; } catch { b.textContent = "Select and Copy"; }
+    setTimeout(() => (b.textContent = "Copy"), 1600);
+  }));
+
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll("[data-in]").forEach((el) => io.observe(el));
+})();
+</script>
+</body>
+</html>

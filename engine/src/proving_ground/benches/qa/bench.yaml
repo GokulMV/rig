@@ -1,0 +1,24 @@
+id: qa
+name: Write tests that catch bugs
+disciplines: [qa, development]
+discipline: qa
+summary: A correct cart module with almost no tests. Write a suite; the checks run it against hidden broken versions (mutants) and pass only if it catches them.
+workflow:
+  id: qa
+  name: Test suite
+  success: The tests pass on the real code and fail on every broken version.
+  steps:
+    - {name: read, type: research, why: Understand the behaviour}
+    - {name: write-tests, type: test, why: Cover it}
+    - {name: run, type: test, why: Run them}
+scenarios:
+  - id: catch-bugs
+    kind: typical
+    step: write-tests
+    title: A suite that catches broken carts
+    instruction: "Write tests in tests/test_cart.py (unittest) for cart.py that would catch bugs in it. They must pass on the current cart.py. Run them with python3 -m unittest."
+  - id: edge-cases
+    kind: edge
+    step: write-tests
+    title: Edge cases the obvious tests miss
+    instruction: "Extend tests/test_cart.py to cover cart.py's edge cases (empty cart, removing more than you have, the free-shipping threshold exactly). They must pass on the current cart.py."

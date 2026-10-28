@@ -1,0 +1,5 @@
+"""CNY."""
+
+CODE = "CNY"
+DECIMALS = 2
+SYMBOL = "CN"

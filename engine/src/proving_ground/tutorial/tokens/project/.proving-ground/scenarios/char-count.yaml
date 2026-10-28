@@ -1,0 +1,17 @@
+id: char-count
+title: Character count
+kind: typical
+instruction: 'Add `char_count(text)` to textkit/count.py: how many characters the text has that aren''t whitespace,
+  as an int.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.count import char_count
+  got = char_count("a b  c")
+  assert got == 3, f'char_count("a b  c") gave {got!r}'
+  got = char_count(" hi\n")
+  assert got == 2, f'char_count(" hi\n") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

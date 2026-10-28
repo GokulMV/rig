@@ -1,0 +1,5 @@
+"""TRY."""
+
+CODE = "TRY"
+DECIMALS = 2
+SYMBOL = "TR"

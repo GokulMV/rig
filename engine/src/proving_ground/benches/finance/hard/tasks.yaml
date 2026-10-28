@@ -1,0 +1,13 @@
+scenarios:
+  - id: hard-batch
+    kind: adversarial
+    step: match
+    tier: hard
+    title: A month of multi-currency invoices, deliveries and resubmissions
+    instruction: "Apply POLICY.md together with POLICY-ADDENDUM.md to every invoice in data/hard/invoices.csv, using data/hard/pos.csv, data/hard/receipts.csv, data/hard/fx-rates.csv and data/hard/paid-history.csv, and read the email in inbox/hard/netcraft-routers.md. Write out/hard-decisions.csv with the header invoice,decision,route and one row per invoice (not per line): decision is approve or hold; route is none, buyer, receiving, procurement or ap-lead, as the policy says. Every invoice in the file must have exactly one row; a repeated invoice row counts that invoice as wrong."
+  - id: hard-recon
+    kind: adversarial
+    step: report
+    tier: hard
+    title: Reconcile a busy October bank statement
+    instruction: "Reconcile data/hard/bank.csv against data/hard/ledger.csv as POLICY.md and POLICY-ADDENDUM.md describe, and read the note in inbox/hard/close-note.md. Write out/hard-recon.md with your working, ending with exactly three lines: 'UNMATCHED BANK: ' and the bank ids that stay unmatched (comma-separated, sorted, or 'none'), 'UNMATCHED LEDGER: ' the same for ledger ids, and 'DIFFERENCE: ' the bank total minus the ledger total, like 12.34 or -5.00."

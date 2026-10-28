@@ -1,0 +1,29 @@
+id: ts-orders
+disciplines: [development, qa]
+name: A multi-file TypeScript service
+discipline: development
+summary: A TypeScript order service across four modules (money, inventory, orders, index) with a written spec. A rounding bug that only shows across currencies, a feature that has to keep stock consistent, and two drifted copies of a validator to merge. Hidden tests run on Node's own test runner; the refactor is also checked for one shared validator.
+workflow:
+  id: ts-orders
+  name: Service change
+  success: The spec holds across modules, the existing tests still pass, and the hidden tests pass.
+  steps:
+    - {name: read, type: research, why: The spec and the modules}
+    - {name: change, type: code, why: Make the change}
+    - {name: test, type: test, why: Prove it}
+scenarios:
+  - id: convert-rounding
+    kind: edge
+    step: change
+    title: Totals off by a cent across currencies
+    instruction: "Ticket ORD-31: order totals converted from GBP and USD are sometimes a cent too low. Fix it so money follows SPEC.md. Keep the existing tests passing."
+  - id: cancel-order
+    kind: typical
+    step: change
+    title: Cancel an order
+    instruction: "Add cancelOrder(order, inventory) to src/orders.ts as SPEC.md describes, and export it from src/index.ts."
+  - id: one-validator
+    kind: typical
+    step: change
+    title: Merge two drifted validators
+    instruction: "validateSku exists twice (src/inventory.ts and src/orders.ts) and the copies disagree. Make one validator in src/sku.ts, used by both, that follows SPEC.md."

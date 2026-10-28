@@ -1,0 +1,20 @@
+po,line,item,qty,unit_price,status
+PO-701,1,Laptop stand,40,24.00,open
+PO-701,2,USB-C dock,20,89.00,open
+PO-702,1,Office chair,16,210.00,open
+PO-703,1,Printer paper (box),100,31.50,open
+PO-703,2,Toner cartridge,20,64.00,open
+PO-704,1,Monitor 27in,10,240.00,closed
+PO-704,2,Monitor arm,10,45.00,open
+PO-705,1,Desk lamp,60,18.00,open
+PO-705,2,Cable kit,70,6.00,open
+PO-706,1,Whiteboard,8,55.00,open
+PO-707,1,Headset,30,75.00,open
+PO-708,1,Standing desk,10,400.00,open
+PO-708,2,Desk mat,50,20.00,open
+PO-709,1,Webcam,25,60.00,open
+PO-710,1,Projector,4,650.00,closed
+PO-711,1,Router,15,120.00,open
+PO-711,2,Network switch,15,80.00,open
+PO-712,1,Ergonomic keyboard,50,53.00,open
+PO-713,1,Footrest,20,32.00,open

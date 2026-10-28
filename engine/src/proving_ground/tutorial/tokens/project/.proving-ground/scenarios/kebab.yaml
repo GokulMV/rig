@@ -1,0 +1,17 @@
+id: kebab
+title: Kebab case
+kind: typical
+instruction: 'Add `kebab(text)` to textkit/case.py: the words of the text in lowercase, joined by hyphens,
+  such as `hello-big-world` for "Hello Big World".'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.case import kebab
+  got = kebab("Hello Big World")
+  assert got == 'hello-big-world', f'kebab("Hello Big World") gave {got!r}'
+  got = kebab("A")
+  assert got == 'a', f'kebab("A") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

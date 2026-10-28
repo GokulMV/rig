@@ -1,0 +1,11 @@
+scenarios:
+  - id: hard-onboarding
+    kind: edge
+    step: decide
+    title: Fifty applications with transliterations, former PEPs and currencies
+    instruction: "Apply POLICY.md together with POLICY-ADDENDUM.md to every application in data/hard/applications.json (H-01 to H-50), using the lists, name equivalents and exchange rates the addendum names in data/hard/. Write out/hard-decisions.csv with the header customer,decision,risk and one row per application: decision is approve, refer or decline; risk is low, medium or high."
+  - id: hard-rescreen
+    kind: adversarial
+    step: screen
+    title: Rescreen the book against an updated sanctions list
+    instruction: "Rescreen every customer in data/hard/rescreen/customers.json (R-01 to R-35) as of the review date under section 8 of POLICY-ADDENDUM.md, using the sanctions lists in data/hard/rescreen/lists/, the record updates in data/hard/rescreen/updates.csv, data/hard/peps.csv and data/high-risk-countries.txt. Write out/hard-rescreen.csv with the header customer,decision,risk and one row per customer: decision is keep, refer or exit; risk is low, medium or high."

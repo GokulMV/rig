@@ -1,0 +1,5 @@
+invoice,date_paid,supplier,po,line,qty,unit_price,currency,usd_value
+INV-4901,2026-09-22,SitWell Limited,PO-702,1,4,210.00,USD,840.00
+INV-4902,2026-09-25,Brightly Ltd,PO-705,2,20,6.00,USD,120.00
+INV-4903,2026-09-28,Hoch & Tief GmbH,PO-708,2,25,20.40,USD,510.00
+INV-4904,2026-09-29,Klavier GmbH,PO-712,1,10,49.50,EUR,535.30

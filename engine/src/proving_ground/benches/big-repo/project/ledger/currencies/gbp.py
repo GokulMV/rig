@@ -1,0 +1,5 @@
+"""GBP."""
+
+CODE = "GBP"
+DECIMALS = 2
+SYMBOL = "GB"

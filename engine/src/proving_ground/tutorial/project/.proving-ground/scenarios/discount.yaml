@@ -1,0 +1,17 @@
+id: discount
+title: Discount label
+kind: typical
+instruction: 'Add `discount(percent)` to pricetags/tags.py: the label for a percentage
+  off, such as 15 percent off.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import discount
+  got = discount(15)
+  assert got == "-15%", f'discount(15) gave {got!r}'
+  got = discount(50)
+  assert got == "-50%", f'discount(50) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

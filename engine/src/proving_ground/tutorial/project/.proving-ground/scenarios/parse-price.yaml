@@ -1,0 +1,19 @@
+id: parse-price
+title: Read a label back
+kind: typical
+instruction: 'Add `parse_price(text)` to pricetags/tags.py: the reverse of `price()`,
+  turning a price label back into whole cents (an int).'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import parse_price
+  got = parse_price("€1.234,56")
+  assert got == 123456, f'parse_price("€1.234,56") gave {got!r}'
+  got = parse_price("€0,05")
+  assert got == 5, f'parse_price("€0,05") gave {got!r}'
+  got = parse_price("€19,99")
+  assert got == 1999, f'parse_price("€19,99") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

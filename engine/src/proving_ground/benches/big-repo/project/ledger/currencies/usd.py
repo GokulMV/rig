@@ -1,0 +1,5 @@
+"""USD."""
+
+CODE = "USD"
+DECIMALS = 2
+SYMBOL = "US"

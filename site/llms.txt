@@ -1,0 +1,23 @@
+# Rig
+
+> Rig is a free, open-source app (MIT licence) that tests whether a change to an AI coding agent really helps. It runs the same coding tasks with and without the change, each in its own Docker sandbox, and reports the difference with a 95% interval and a Rig score from 0 to 100. When the evidence is too thin to tell, it says so instead of guessing.
+
+Rig runs locally: a Python engine serves a web app on 127.0.0.1, and nothing is hosted. It works with Claude Code, Codex, OpenCode and Gemini, and runs for free on a local model (Ollama, LM Studio, llama.cpp, vLLM or Jan). Paid runs show an estimate first and stop at a budget you set.
+
+What it can measure:
+
+- A skill, a hook, an MCP server or a CLAUDE.md rule, with and without it on the same tasks.
+- A change to the code itself, before and after, each side exported from git.
+- A saving in tokens, cost or time per solved task, with the pass rate as a guard.
+- A whole workflow, built on a canvas or started from one of 23 architectures, 15 business processes or 25 agentic patterns, on 20 built-in benches or an imported eval suite.
+
+## Docs
+
+- [README](https://github.com/GokulMV/rig#readme): install, signing in, the Rig score, and the command line
+- [How Rig works](https://github.com/GokulMV/rig/blob/main/docs/explained.md): the full explanation, from the statistics to the sandbox
+- [CI gate](https://github.com/GokulMV/rig/blob/main/docs/ci.md): `rig gate` in GitHub Actions
+- [Security](https://github.com/GokulMV/rig/blob/main/SECURITY.md): what the sandbox does and its known limits
+
+## Source
+
+- [GitHub repository](https://github.com/GokulMV/rig): MIT licence

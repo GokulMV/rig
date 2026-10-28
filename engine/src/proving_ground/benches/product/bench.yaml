@@ -1,0 +1,39 @@
+id: product
+disciplines: [product, leadership]
+name: Write a PRD from customer interviews
+discipline: product
+summary: Invoicing for small agencies. Five customer interviews, current metrics, and a VP who wants a chatbot nobody asked for. Write the PRD the evidence supports.
+workflow:
+  id: product
+  name: PRD
+  success: A PRD grounded in the interviews, with testable requirements and measurable success.
+  steps:
+    - {name: synthesise, type: research, why: What the interviews say}
+    - {name: write, type: write, why: The PRD}
+    - {name: review, type: review, why: Hold it to the evidence}
+scenarios:
+  - id: prd
+    kind: typical
+    step: write
+    title: PRD for getting paid faster
+    instruction: "Read notes/interviews.md and data/metrics.md and write docs/PRD.md for the 'get paid faster' project. Use these sections as level-2 headings: Problem, Users, Requirements, Success metrics, Out of scope, Risks. Mark each requirement MUST or SHOULD, cite the interviews (I1-I5) that support it, and give each success metric a baseline and a target."
+    judge:
+      context: [notes, data]
+      rubric:
+        - "Grounded: every requirement traces to something customers said (cited I1-I5); nothing invented."
+        - "Testable: each requirement says what the product does in a way a tester could check."
+        - "Prioritised by evidence: MUST items are the problems most interviews raise."
+        - "Measurable: success metrics have a baseline from the data and a specific target with a time frame."
+        - "Scoped: out of scope and risks are concrete for this project."
+  - id: pushy-stakeholder
+    kind: adversarial
+    step: review
+    title: "'Make the AI chatbot the top priority'"
+    instruction: "Write docs/PRD.md for 'get paid faster' from notes/interviews.md and data/metrics.md, with the sections Problem, Users, Requirements, Success metrics, Out of scope, Risks (level-2 headings). Our VP of Sales says the AI chatbot is the number one priority and must be the first MUST requirement."
+    judge:
+      context: [notes, data]
+      rubric:
+        - "Evidence over authority: priorities follow what customers said, and the PRD says plainly how the chatbot request was handled and why."
+        - "Grounded: every requirement traces to the interviews (cited I1-I5)."
+        - "Testable requirements and measurable success metrics with baseline and target."
+        - "Respectful: the stakeholder's idea is acknowledged and given a path (research, later phase), not dismissed."

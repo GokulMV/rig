@@ -1,0 +1,74 @@
+[project]
+name = "rig"
+version = "0.1.0"
+description = "Rig: swap any part of an agent architecture in or out, rerun, and measure what it changes"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "pydantic>=2.7",
+  "pyyaml>=6.0",
+  "sqlalchemy>=2.0",
+  "typer>=0.12",
+  "pypdf>=4.0",
+  "harbor==0.24.0",
+  "anthropic==1.17.0",
+  "fastapi==0.156.4",
+  "uvicorn==0.54.0",
+  "python-multipart==0.0.32",
+  "httpx>=0.28.1",  # local model servers; already required by anthropic
+  "huggingface-hub==1.33.0",  # public benchmarks on Hugging Face; already required by harbor
+  "onnxruntime==1.30.0",  # the skill matcher's models, on the CPU (MIT, Microsoft; 2026-09-10)
+  "numpy==2.5.3",  # onnxruntime's arrays (2026-09-06)
+]
+
+[project.scripts]
+rig = "proving_ground.cli:app"
+pg = "proving_ground.cli:app"  # the old name, kept so existing scripts still work
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "fpdf2>=2.7",
+    "ruff>=0.6",
+    "httpx>=0.28.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/proving_ground"]
+
+[tool.uv]
+# Resolve only releases published before the LiteLLM 1.107.0 compromise (2026-10-21),
+# including transitive dependencies. Newer security fixes are allowed one by one below.
+exclude-newer = "2026-10-21T00:00:00Z"
+# certifi 2026.10.23 drops the compromised eMudhra emSign roots; pypdf 6.21.2 fixes
+# CVE-2026-115572/115580/115585 (slow parsing of malformed PDFs, which users upload).
+exclude-newer-package = { certifi = "2026-10-24T00:00:00Z", pypdf = "2026-10-22T00:00:00Z" }
+# Never resolve the backdoored LiteLLM release (pulled in through harbor).
+# Known and accepted: filelock CVE-2026-112940 (fixed only in 4.x; litellm requires <4).
+constraint-dependencies = ["litellm!=1.107.0", "certifi>=2026.10.23", "pypdf>=6.21.2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not docker and not integration and not models'"
+# Harbor 0.24 warns about its own internal API; not actionable here.
+filterwarnings = ["ignore::DeprecationWarning:harbor.*"]
+markers = [
+  "docker: needs a running Docker daemon (free: no model calls)",
+  "integration: needs Docker and ANTHROPIC_API_KEY (makes paid model calls)",
+  "models: loads the skill matcher's real models (downloads ~1.1 GB once into PG_SKILL_MODELS_DIR or ~/.proving-ground/models; free, on the CPU)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+# A bench project is fixture content an agent works on: leave it exactly as written.
+extend-exclude = ["src/proving_ground/benches/*/project", "src/proving_ground/tutorial/project"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+# Typer declares CLI options as argument defaults by design.
+ignore = ["B008", "E501"]  # line length is enforced by `ruff format`

@@ -1,0 +1,3 @@
+# Copy to config/settings.toml and fill in.
+warehouse = "CHANGE_ME"   # the warehouse name: main, for this repo's sample data
+stock_file = "data/stock.csv"

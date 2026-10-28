@@ -1,0 +1,17 @@
+id: unit-price
+title: Price per unit
+kind: typical
+instruction: 'Add `unit_price(cents, unit)` to pricetags/tags.py: the label for a
+  price per unit, such as a price per kg.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import unit_price
+  got = unit_price(250, "kg")
+  assert got == "€2,50 / kg", f'unit_price(250, "kg") gave {got!r}'
+  got = unit_price(1999, "l")
+  assert got == "€19,99 / l", f'unit_price(1999, "l") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

@@ -1,0 +1,26 @@
+id: leadership
+disciplines: [leadership, product]
+name: Write a build-or-buy decision memo
+discipline: leadership
+summary: Build billing in-house or buy a platform? Costs, timelines and risks are in the brief. The memo must weigh at least three options with the right numbers and make a call.
+workflow:
+  id: leadership
+  name: Decision memo
+  success: A clear recommendation a board can act on, with the numbers right.
+  steps:
+    - {name: situation, type: research, why: The facts}
+    - {name: options, type: plan, why: The choices}
+    - {name: recommend, type: review, why: The call}
+scenarios:
+  - id: memo
+    kind: typical
+    step: recommend
+    title: Billing build or buy
+    instruction: "Read SITUATION.md and write memo.md for the board: at most 600 words, with sections '## Options' (at least three), '## Recommendation', and '## What would change my mind'."
+    judge:
+      context: [SITUATION.md]
+      rubric:
+        - "Makes one clear recommendation with the first concrete step."
+        - "Weighs real options with their costs, time and risks from SITUATION.md."
+        - "Numbers are right and comparable (same time horizon)."
+        - "Names what would change the decision, specifically."

@@ -1,0 +1,5 @@
+"""HUF."""
+
+CODE = "HUF"
+DECIMALS = 2
+SYMBOL = "HU"

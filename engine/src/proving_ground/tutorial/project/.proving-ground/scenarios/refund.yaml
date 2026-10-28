@@ -1,0 +1,17 @@
+id: refund
+title: Refund label
+kind: typical
+instruction: 'Add `refund(cents)` to pricetags/tags.py: the label for money given
+  back to a customer. It takes the amount refunded in cents.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import refund
+  got = refund(300)
+  assert got == "-€3,00", f'refund(300) gave {got!r}'
+  got = refund(123456)
+  assert got == "-€1.234,56", f'refund(123456) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

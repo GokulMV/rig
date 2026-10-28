@@ -1,0 +1,5 @@
+"""SEK."""
+
+CODE = "SEK"
+DECIMALS = 2
+SYMBOL = "SE"

@@ -1,0 +1,5 @@
+"""THB."""
+
+CODE = "THB"
+DECIMALS = 2
+SYMBOL = "TH"

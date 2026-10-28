@@ -1,0 +1,5 @@
+"""EUR."""
+
+CODE = "EUR"
+DECIMALS = 2
+SYMBOL = "EU"

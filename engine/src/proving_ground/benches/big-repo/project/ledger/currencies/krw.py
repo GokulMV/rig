@@ -1,0 +1,5 @@
+"""KRW."""
+
+CODE = "KRW"
+DECIMALS = 0
+SYMBOL = "KR"

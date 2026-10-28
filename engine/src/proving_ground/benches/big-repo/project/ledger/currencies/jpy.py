@@ -1,0 +1,5 @@
+"""JPY."""
+
+CODE = "JPY"
+DECIMALS = 0
+SYMBOL = "JP"

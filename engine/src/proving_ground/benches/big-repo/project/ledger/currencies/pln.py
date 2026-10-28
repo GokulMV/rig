@@ -1,0 +1,5 @@
+"""PLN."""
+
+CODE = "PLN"
+DECIMALS = 2
+SYMBOL = "PL"

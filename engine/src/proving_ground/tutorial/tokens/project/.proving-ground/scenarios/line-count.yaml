@@ -1,0 +1,19 @@
+id: line-count
+title: Line count
+kind: typical
+instruction: 'Add `line_count(text)` to textkit/count.py: how many lines the text has, as an int: 0 for empty
+  text, and a final newline doesn''t start a new line.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.count import line_count
+  got = line_count("a\nb\nc")
+  assert got == 3, f'line_count("a\nb\nc") gave {got!r}'
+  got = line_count("a\nb\n")
+  assert got == 2, f'line_count("a\nb\n") gave {got!r}'
+  got = line_count("")
+  assert got == 0, f'line_count("") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

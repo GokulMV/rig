@@ -1,0 +1,5 @@
+"""BRL."""
+
+CODE = "BRL"
+DECIMALS = 2
+SYMBOL = "BR"

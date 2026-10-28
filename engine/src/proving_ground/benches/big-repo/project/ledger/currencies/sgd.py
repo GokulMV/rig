@@ -1,0 +1,5 @@
+"""SGD."""
+
+CODE = "SGD"
+DECIMALS = 2
+SYMBOL = "SG"

@@ -1,0 +1,16 @@
+id: strip-digits
+title: Strip digits
+kind: typical
+instruction: 'Add `strip_digits(text)` to textkit/clean.py: the text with every digit 0 to 9 removed.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.clean import strip_digits
+  got = strip_digits("r2d2 c3po")
+  assert got == 'rd cpo', f'strip_digits("r2d2 c3po") gave {got!r}'
+  got = strip_digits("abc")
+  assert got == 'abc', f'strip_digits("abc") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

@@ -1,0 +1,17 @@
+id: with-tax
+title: Price with tax
+kind: edge
+instruction: 'Add `with_tax(net_cents, rate)` to pricetags/tags.py: the label for
+  a net price in cents with a tax rate in percent added, such as 23 for 23%.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import with_tax
+  got = with_tax(1000, 23)
+  assert got == "€12,30", f'with_tax(1000, 23) gave {got!r}'
+  got = with_tax(250, 13)
+  assert got == "€2,83", f'with_tax(250, 13) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

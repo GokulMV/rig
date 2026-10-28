@@ -1,0 +1,1028 @@
+{
+ "note": "A fresh test set for the skill matcher, written and labelled before any change to the matcher that it measures, and never used to tune it. Each step is written out in full (name, does, kind, discipline), across disciplines, including short graph and business steps and retrieval steps; about a third have no fitting skill. `ok` lists the skills from starter_skills_index.json a careful person would attach, judged from their descriptions (any one counts as right); an empty `ok` means none fits and attaching any is a false attachment.",
+ "cases": [
+  {
+   "ref": "fresh:development/reproduce-the-bug",
+   "split": "fresh",
+   "step": {
+    "name": "Reproduce the bug",
+    "does": "Write down the exact steps and inputs that make the crash happen, and confirm it happens every time.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "reproduce-bug",
+    "systematic-debugging"
+   ]
+  },
+  {
+   "ref": "fresh:development/bisect-the-regression",
+   "split": "fresh",
+   "step": {
+    "name": "Bisect the regression",
+    "does": "Find the commit that broke the build by bisecting between the last good tag and main.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "git-advanced-workflows",
+    "regression-hunt"
+   ]
+  },
+  {
+   "ref": "fresh:development/set-up-an-isolated-workspace",
+   "split": "fresh",
+   "step": {
+    "name": "Set up an isolated workspace",
+    "does": "Create a separate checkout on a new branch so the work doesn't disturb main.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "using-git-worktrees"
+   ]
+  },
+  {
+   "ref": "fresh:development/wrap-up-the-branch",
+   "split": "fresh",
+   "step": {
+    "name": "Wrap up the branch",
+    "does": "All tests pass; decide whether to merge, open a PR or keep the branch, and clean up.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "finishing-a-development-branch"
+   ]
+  },
+  {
+   "ref": "fresh:development/respond-to-review-comments",
+   "split": "fresh",
+   "step": {
+    "name": "Respond to review comments",
+    "does": "Go through the reviewer's comments, check each against the code, and push fixes only for the ones that hold.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "receiving-code-review"
+   ]
+  },
+  {
+   "ref": "fresh:development/package-the-library",
+   "split": "fresh",
+   "step": {
+    "name": "Package the library",
+    "does": "Add a pyproject.toml, build a wheel and publish the package to PyPI.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "python-packaging"
+   ]
+  },
+  {
+   "ref": "fresh:development/load-settings-from-the-environment",
+   "split": "fresh",
+   "step": {
+    "name": "Load settings from the environment",
+    "does": "Move hard-coded secrets and URLs in the Python service into typed settings read from environment variables.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "python-configuration"
+   ]
+  },
+  {
+   "ref": "fresh:development/unit-test-the-hooks",
+   "split": "fresh",
+   "step": {
+    "name": "Unit-test the hooks",
+    "does": "Cover the React hooks with Vitest and Testing Library, mocking the fetch calls.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "javascript-testing-patterns"
+   ]
+  },
+  {
+   "ref": "fresh:development/rename-the-module",
+   "split": "fresh",
+   "step": {
+    "name": "Rename the module",
+    "does": "Rename the module and update every import.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:development/fix-the-flaky-test",
+   "split": "fresh",
+   "step": {
+    "name": "Fix the flaky test",
+    "does": "The checkout test fails one run in ten; find out why it is nondeterministic and make it stable.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "systematic-debugging"
+   ]
+  },
+  {
+   "ref": "fresh:development/expose-the-api-to-the-agent",
+   "split": "fresh",
+   "step": {
+    "name": "Expose the API to the agent",
+    "does": "Wrap the inventory API as tools in a small Model Context Protocol server the agent can call.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "mcp-builder"
+   ]
+  },
+  {
+   "ref": "fresh:development/model-the-order-saga",
+   "split": "fresh",
+   "step": {
+    "name": "Model the order saga",
+    "does": "Run the order flow as a durable Temporal workflow with compensating steps when payment fails.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "workflow-orchestration-patterns"
+   ]
+  },
+  {
+   "ref": "fresh:development/persist-the-events",
+   "split": "fresh",
+   "step": {
+    "name": "Persist the events",
+    "does": "Append every order event to an event store and rebuild the current state from it.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "event-store-design"
+   ]
+  },
+  {
+   "ref": "fresh:qa/browser-smoke-test",
+   "split": "fresh",
+   "step": {
+    "name": "Browser smoke test",
+    "does": "Open the staging site in a headless browser, click through sign-up and checkout, and screenshot each page.",
+    "kind": "check",
+    "words": [],
+    "discipline": "qa"
+   },
+   "ok": [
+    "webapp-testing"
+   ]
+  },
+  {
+   "ref": "fresh:qa/screen-reader-pass",
+   "split": "fresh",
+   "step": {
+    "name": "Screen reader pass",
+    "does": "Walk the checkout with VoiceOver and NVDA; note every control that is announced wrongly.",
+    "kind": "check",
+    "words": [],
+    "discipline": "qa"
+   },
+   "ok": [
+    "screen-reader-testing"
+   ]
+  },
+  {
+   "ref": "fresh:qa/measure-test-quality",
+   "split": "fresh",
+   "step": {
+    "name": "Measure test quality",
+    "does": "Change the source in small ways and see which changes the suite fails to catch.",
+    "kind": "check",
+    "words": [],
+    "discipline": "qa"
+   },
+   "ok": [
+    "mutation-testing"
+   ]
+  },
+  {
+   "ref": "fresh:qa/load-test",
+   "split": "fresh",
+   "step": {
+    "name": "Load test",
+    "does": "Ramp traffic on the API to 2,000 requests a second and record p95 latency and errors.",
+    "kind": "check",
+    "words": [],
+    "discipline": "qa"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:qa/sign-off-the-release",
+   "split": "fresh",
+   "step": {
+    "name": "Sign off the release",
+    "does": "Before saying the release is ready, re-run the full suite and the smoke checks and paste the output.",
+    "kind": "check",
+    "words": [],
+    "discipline": "qa"
+   },
+   "ok": [
+    "verification-before-completion"
+   ]
+  },
+  {
+   "ref": "fresh:product/interview-users",
+   "split": "fresh",
+   "step": {
+    "name": "Interview users",
+    "does": "Run five customer interviews and note the jobs they hire the product for.",
+    "kind": "think",
+    "words": [],
+    "discipline": "product"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:product/prioritise-the-backlog",
+   "split": "fresh",
+   "step": {
+    "name": "Prioritise the backlog",
+    "does": "Score each item by reach, impact, confidence and effort; order the backlog.",
+    "kind": "think",
+    "words": [],
+    "discipline": "product"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:product/explore-options",
+   "split": "fresh",
+   "step": {
+    "name": "Explore options",
+    "does": "Before committing to an approach, lay out several ways to solve the problem and their trade-offs.",
+    "kind": "think",
+    "words": [],
+    "discipline": "product"
+   },
+   "ok": [
+    "brainstorming"
+   ]
+  },
+  {
+   "ref": "fresh:product/write-the-prd",
+   "split": "fresh",
+   "step": {
+    "name": "Write the PRD",
+    "does": "Draft the product requirements document: goals, non-goals, user stories and open questions.",
+    "kind": "do",
+    "words": [],
+    "discipline": "product"
+   },
+   "ok": [
+    "doc-coauthoring"
+   ]
+  },
+  {
+   "ref": "fresh:product/launch-dashboard",
+   "split": "fresh",
+   "step": {
+    "name": "Launch dashboard",
+    "does": "Pick the KPIs for the launch and lay out the dashboard leadership will watch each week.",
+    "kind": "do",
+    "words": [],
+    "discipline": "product"
+   },
+   "ok": [
+    "kpi-dashboard-design"
+   ]
+  },
+  {
+   "ref": "fresh:design/pick-a-visual-direction",
+   "split": "fresh",
+   "step": {
+    "name": "Pick a visual direction",
+    "does": "Choose typography, colour and layout for the new landing page so it doesn't look templated.",
+    "kind": "think",
+    "words": [],
+    "discipline": "design"
+   },
+   "ok": [
+    "frontend-design"
+   ]
+  },
+  {
+   "ref": "fresh:design/design-the-iphone-screens",
+   "split": "fresh",
+   "step": {
+    "name": "Design the iPhone screens",
+    "does": "Design the settings screens for the iPhone app following Apple's Human Interface Guidelines.",
+    "kind": "do",
+    "words": [],
+    "discipline": "design"
+   },
+   "ok": [
+    "mobile-ios-design"
+   ]
+  },
+  {
+   "ref": "fresh:design/usability-test",
+   "split": "fresh",
+   "step": {
+    "name": "Usability test",
+    "does": "Watch five people try the prototype and note where they hesitate.",
+    "kind": "check",
+    "words": [],
+    "discipline": "design"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:design/generative-header-art",
+   "split": "fresh",
+   "step": {
+    "name": "Generative header art",
+    "does": "Make the header image as generative art in p5.js, seeded so it can be reproduced.",
+    "kind": "do",
+    "words": [],
+    "discipline": "design"
+   },
+   "ok": [
+    "algorithmic-art"
+   ]
+  },
+  {
+   "ref": "fresh:data/model-the-warehouse-tables",
+   "split": "fresh",
+   "step": {
+    "name": "Model the warehouse tables",
+    "does": "Write the dbt staging and mart models with tests and docs; make the large ones incremental.",
+    "kind": "do",
+    "words": [],
+    "discipline": "data"
+   },
+   "ok": [
+    "dbt-transformation-patterns"
+   ]
+  },
+  {
+   "ref": "fresh:data/clean-the-spreadsheet",
+   "split": "fresh",
+   "step": {
+    "name": "Clean the spreadsheet",
+    "does": "Fix the messy columns in the exported .xlsx: dates, duplicates, and totals as formulas.",
+    "kind": "do",
+    "words": [],
+    "discipline": "data"
+   },
+   "ok": [
+    "xlsx"
+   ]
+  },
+  {
+   "ref": "fresh:data/explain-the-drop",
+   "split": "fresh",
+   "step": {
+    "name": "Explain the drop",
+    "does": "Find why weekly active users fell 8% last week: segment by platform, region and cohort.",
+    "kind": "think",
+    "words": [],
+    "discipline": "data"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:data/pull-tables-from-the-reports",
+   "split": "fresh",
+   "step": {
+    "name": "Pull tables from the reports",
+    "does": "Extract the financial tables from the quarterly PDF reports into CSV.",
+    "kind": "do",
+    "words": [],
+    "discipline": "data"
+   },
+   "ok": [
+    "pdf"
+   ]
+  },
+  {
+   "ref": "fresh:data/dedupe-customers",
+   "split": "fresh",
+   "step": {
+    "name": "Dedupe customers",
+    "does": "Merge duplicate customer records by email and a fuzzy match on name.",
+    "kind": "do",
+    "words": [],
+    "discipline": "data"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:devops/trace-the-slow-request",
+   "split": "fresh",
+   "step": {
+    "name": "Trace the slow request",
+    "does": "Follow one slow checkout request across the services to see where the time goes.",
+    "kind": "do",
+    "words": [],
+    "discipline": "devops"
+   },
+   "ok": [
+    "distributed-tracing"
+   ]
+  },
+  {
+   "ref": "fresh:devops/cut-the-cloud-bill",
+   "split": "fresh",
+   "step": {
+    "name": "Cut the cloud bill",
+    "does": "Find idle instances and oversized databases on AWS and propose reserved capacity.",
+    "kind": "do",
+    "words": [],
+    "discipline": "devops"
+   },
+   "ok": [
+    "cost-optimization"
+   ]
+  },
+  {
+   "ref": "fresh:devops/package-for-kubernetes",
+   "split": "fresh",
+   "step": {
+    "name": "Package for Kubernetes",
+    "does": "Write the chart that templates the service's Kubernetes manifests, with values per environment.",
+    "kind": "do",
+    "words": [],
+    "discipline": "devops"
+   },
+   "ok": [
+    "helm-chart-scaffolding"
+   ]
+  },
+  {
+   "ref": "fresh:devops/write-the-postmortem",
+   "split": "fresh",
+   "step": {
+    "name": "Write the postmortem",
+    "does": "Write the blameless postmortem: timeline, impact, causes and action items.",
+    "kind": "do",
+    "words": [],
+    "discipline": "devops"
+   },
+   "ok": [
+    "internal-comms",
+    "doc-coauthoring"
+   ]
+  },
+  {
+   "ref": "fresh:devops/page-on-call",
+   "split": "fresh",
+   "step": {
+    "name": "Page on-call",
+    "does": "Page the on-call engineer and open the incident channel.",
+    "kind": "do",
+    "words": [],
+    "discipline": "devops"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:devops/speed-up-the-build",
+   "split": "fresh",
+   "step": {
+    "name": "Speed up the build",
+    "does": "The monorepo build takes 40 minutes in Bazel; add remote caching and find the slow targets.",
+    "kind": "do",
+    "words": [],
+    "discipline": "devops"
+   },
+   "ok": [
+    "bazel-build-optimization"
+   ]
+  },
+  {
+   "ref": "fresh:devops/network-timeouts",
+   "split": "fresh",
+   "step": {
+    "name": "Network timeouts",
+    "does": "Calls to the API time out from the office Macs; check DNS, the LAN and the upstream path.",
+    "kind": "do",
+    "words": [],
+    "discipline": "devops"
+   },
+   "ok": [
+    "connectivity-triage"
+   ]
+  },
+  {
+   "ref": "fresh:security/audit-the-ci-workflows",
+   "split": "fresh",
+   "step": {
+    "name": "Audit the CI workflows",
+    "does": "Check the GitHub Actions workflows where an AI agent reads issue text for prompt-injection paths.",
+    "kind": "check",
+    "words": [],
+    "discipline": "security"
+   },
+   "ok": [
+    "agentic-actions-auditor"
+   ]
+  },
+  {
+   "ref": "fresh:security/find-the-same-bug-elsewhere",
+   "split": "fresh",
+   "step": {
+    "name": "Find the same bug elsewhere",
+    "does": "After the SQL injection in the orders handler, search the codebase for other places with the same pattern.",
+    "kind": "do",
+    "words": [],
+    "discipline": "security"
+   },
+   "ok": [
+    "variant-analysis"
+   ]
+  },
+  {
+   "ref": "fresh:security/write-a-detection-rule",
+   "split": "fresh",
+   "step": {
+    "name": "Write a detection rule",
+    "does": "Write a static-analysis rule that flags unsanitised input reaching a shell call.",
+    "kind": "do",
+    "words": [],
+    "discipline": "security"
+   },
+   "ok": [
+    "semgrep-rule-creator"
+   ]
+  },
+  {
+   "ref": "fresh:security/fuzz-the-parser",
+   "split": "fresh",
+   "step": {
+    "name": "Fuzz the parser",
+    "does": "Fuzz the Python file-format parser with a coverage-guided fuzzer and triage the crashes.",
+    "kind": "check",
+    "words": [],
+    "discipline": "security"
+   },
+   "ok": [
+    "atheris"
+   ]
+  },
+  {
+   "ref": "fresh:security/rotate-the-leaked-key",
+   "split": "fresh",
+   "step": {
+    "name": "Rotate the leaked key",
+    "does": "Revoke the leaked API key, issue a new one and update the secrets store.",
+    "kind": "do",
+    "words": [],
+    "discipline": "security"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:security/review-the-unsafe-code",
+   "split": "fresh",
+   "step": {
+    "name": "Review the unsafe code",
+    "does": "Audit the Rust crate's unsafe blocks and FFI boundary for memory safety.",
+    "kind": "check",
+    "words": [],
+    "discipline": "security"
+   },
+   "ok": [
+    "rust-review"
+   ]
+  },
+  {
+   "ref": "fresh:docs/write-the-release-notes",
+   "split": "fresh",
+   "step": {
+    "name": "Write the release notes",
+    "does": "Turn the merged PRs since the last tag into release notes for users.",
+    "kind": "do",
+    "words": [],
+    "discipline": "docs"
+   },
+   "ok": [
+    "changelog-automation"
+   ]
+  },
+  {
+   "ref": "fresh:docs/make-it-sound-human",
+   "split": "fresh",
+   "step": {
+    "name": "Make it sound human",
+    "does": "Strip the filler and machine-sounding phrasing from the blog post draft.",
+    "kind": "do",
+    "words": [],
+    "discipline": "docs"
+   },
+   "ok": [
+    "avoid-ai-writing"
+   ]
+  },
+  {
+   "ref": "fresh:docs/draw-the-architecture",
+   "split": "fresh",
+   "step": {
+    "name": "Draw the architecture",
+    "does": "Draw the service's module dependencies and call graph as a diagram for the README.",
+    "kind": "do",
+    "words": [],
+    "discipline": "docs"
+   },
+   "ok": [
+    "diagramming-code"
+   ]
+  },
+  {
+   "ref": "fresh:docs/translate-the-guide",
+   "split": "fresh",
+   "step": {
+    "name": "Translate the guide",
+    "does": "Translate the user guide into Spanish and German, keeping the terms consistent.",
+    "kind": "do",
+    "words": [],
+    "discipline": "docs"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:docs/export-for-hr",
+   "split": "fresh",
+   "step": {
+    "name": "Export for HR",
+    "does": "Export the onboarding guide as a formatted Word document with a table of contents.",
+    "kind": "do",
+    "words": [],
+    "discipline": "docs"
+   },
+   "ok": [
+    "docx"
+   ]
+  },
+  {
+   "ref": "fresh:research/literature-review",
+   "split": "fresh",
+   "step": {
+    "name": "Literature review",
+    "does": "Find and summarise the main papers on the topic since 2023.",
+    "kind": "think",
+    "words": [],
+    "discipline": "research"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:research/fine-tune-or-not",
+   "split": "fresh",
+   "step": {
+    "name": "Fine-tune or not",
+    "does": "Decide whether fine-tuning the model is worth it, or whether prompting and retrieval would be enough.",
+    "kind": "think",
+    "words": [],
+    "discipline": "research"
+   },
+   "ok": [
+    "finetuning-method-selection"
+   ]
+  },
+  {
+   "ref": "fresh:research/traces-to-training-data",
+   "split": "fresh",
+   "step": {
+    "name": "Traces to training data",
+    "does": "Turn the graded evaluation runs into SFT examples and preference pairs.",
+    "kind": "do",
+    "words": [],
+    "discipline": "research"
+   },
+   "ok": [
+    "trace-to-training-data"
+   ]
+  },
+  {
+   "ref": "fresh:finance/reconcile-the-bank-account",
+   "split": "fresh",
+   "step": {
+    "name": "Reconcile the bank account",
+    "does": "Match each bank statement line to a ledger entry and list what doesn't match.",
+    "kind": "check",
+    "words": [],
+    "discipline": "finance"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:finance/forecast-cash",
+   "split": "fresh",
+   "step": {
+    "name": "Forecast cash",
+    "does": "Project the next 13 weeks of cash in and out from receivables and payables.",
+    "kind": "think",
+    "words": [],
+    "discipline": "finance"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:finance/plan-headcount",
+   "split": "fresh",
+   "step": {
+    "name": "Plan headcount",
+    "does": "Plan the hires for the next two quarters with roles, salary bands and equity ranges.",
+    "kind": "think",
+    "words": [],
+    "discipline": "finance"
+   },
+   "ok": [
+    "team-composition-analysis"
+   ]
+  },
+  {
+   "ref": "fresh:finance/approve-the-expense",
+   "split": "fresh",
+   "step": {
+    "name": "Approve the expense",
+    "does": "Check the expense claim against the travel policy and approve or reject it.",
+    "kind": "judge",
+    "words": [],
+    "discipline": "finance"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:support/route-the-ticket",
+   "split": "fresh",
+   "step": {
+    "name": "Route the ticket",
+    "does": "Tag the ticket by product area and urgency and send it to the right queue.",
+    "kind": "do",
+    "words": [],
+    "discipline": "support"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:support/post-the-outage-update",
+   "split": "fresh",
+   "step": {
+    "name": "Post the outage update",
+    "does": "Post a customer-facing update on the outage and what we are doing about it.",
+    "kind": "do",
+    "words": [],
+    "discipline": "support"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:support/write-the-agent-faq",
+   "split": "fresh",
+   "step": {
+    "name": "Write the agent FAQ",
+    "does": "Write the internal FAQ for support agents about the billing changes.",
+    "kind": "do",
+    "words": [],
+    "discipline": "support"
+   },
+   "ok": [
+    "internal-comms",
+    "doc-coauthoring"
+   ]
+  },
+  {
+   "ref": "fresh:support/refund",
+   "split": "fresh",
+   "step": {
+    "name": "Refund",
+    "does": "Issue the refund and confirm it to the customer by email.",
+    "kind": "do",
+    "words": [],
+    "discipline": "support"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:compliance/check-against-the-standard",
+   "split": "fresh",
+   "step": {
+    "name": "Check against the standard",
+    "does": "Compare the implementation with the protocol specification; list requirements it misses or contradicts.",
+    "kind": "check",
+    "words": [],
+    "discipline": "compliance"
+   },
+   "ok": [
+    "spec-to-code-compliance"
+   ]
+  },
+  {
+   "ref": "fresh:compliance/audit-trail-for-the-agent",
+   "split": "fresh",
+   "step": {
+    "name": "Audit trail for the agent",
+    "does": "Keep signed, tamper-evident records of every tool call the coding agent makes, for the auditors.",
+    "kind": "do",
+    "words": [],
+    "discipline": "compliance"
+   },
+   "ok": [
+    "protect-mcp-setup"
+   ]
+  },
+  {
+   "ref": "fresh:compliance/collect-evidence",
+   "split": "fresh",
+   "step": {
+    "name": "Collect evidence",
+    "does": "Gather the screenshots and exports that prove this quarter's access reviews happened.",
+    "kind": "do",
+    "words": [],
+    "discipline": "compliance"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:compliance/sanctions-screening",
+   "split": "fresh",
+   "step": {
+    "name": "Sanctions screening",
+    "does": "Screen the new customer's name against the sanctions lists.",
+    "kind": "check",
+    "words": [],
+    "discipline": "compliance"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:research/embed-the-chunks",
+   "split": "fresh",
+   "step": {
+    "name": "Embed the chunks",
+    "does": "Embed each chunk and store the vectors for nearest-neighbour search.",
+    "kind": "do",
+    "words": [],
+    "discipline": "research"
+   },
+   "ok": [
+    "similarity-search-patterns"
+   ]
+  },
+  {
+   "ref": "fresh:research/chunk-the-documents",
+   "split": "fresh",
+   "step": {
+    "name": "Chunk the documents",
+    "does": "Split each document into overlapping chunks of about 500 tokens at headings.",
+    "kind": "do",
+    "words": [],
+    "discipline": "research"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:research/cite-the-sources",
+   "split": "fresh",
+   "step": {
+    "name": "Cite the sources",
+    "does": "Write the answer from the retrieved passages only and cite each claim.",
+    "kind": "do",
+    "words": [],
+    "discipline": "research"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:research/wire-the-agent-graph",
+   "split": "fresh",
+   "step": {
+    "name": "Wire the agent graph",
+    "does": "Connect the retriever, grader and writer as a LangGraph agent with memory.",
+    "kind": "do",
+    "words": [],
+    "discipline": "research"
+   },
+   "ok": [
+    "langchain-architecture"
+   ]
+  },
+  {
+   "ref": "fresh:development/join",
+   "split": "fresh",
+   "step": {
+    "name": "Join",
+    "does": "Combine the branch results into one.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:development/fan-out",
+   "split": "fresh",
+   "step": {
+    "name": "Fan out",
+    "does": "Hand each independent subtask to its own agent and run them at the same time.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "dispatching-parallel-agents",
+    "subagent-driven-development",
+    "parallel-feature-development"
+   ]
+  },
+  {
+   "ref": "fresh:finance/approve",
+   "split": "fresh",
+   "step": {
+    "name": "Approve",
+    "does": "The manager approves or sends it back.",
+    "kind": "judge",
+    "words": [],
+    "discipline": "finance"
+   },
+   "ok": []
+  },
+  {
+   "ref": "fresh:marketing/schedule-the-posts",
+   "split": "fresh",
+   "step": {
+    "name": "Schedule the posts",
+    "does": "Schedule the launch announcement on LinkedIn and X for Tuesday morning.",
+    "kind": "do",
+    "words": [],
+    "discipline": "marketing"
+   },
+   "ok": [
+    "social-publishing"
+   ]
+  },
+  {
+   "ref": "fresh:marketing/investor-deck",
+   "split": "fresh",
+   "step": {
+    "name": "Investor deck",
+    "does": "Build the investor deck: the narrative, the sources and editable slides.",
+    "kind": "do",
+    "words": [],
+    "discipline": "marketing"
+   },
+   "ok": [
+    "pptx",
+    "pptx-deck-context"
+   ]
+  },
+  {
+   "ref": "fresh:development/triage-the-issue-tracker",
+   "split": "fresh",
+   "step": {
+    "name": "Triage the issue tracker",
+    "does": "Go through the repository's open GitHub issues and PRs, label them, and close the resolved ones.",
+    "kind": "do",
+    "words": [],
+    "discipline": "development"
+   },
+   "ok": [
+    "github-triage"
+   ]
+  },
+  {
+   "ref": "fresh:leadership/set-the-quarter-s-goals",
+   "split": "fresh",
+   "step": {
+    "name": "Set the quarter's goals",
+    "does": "Write three objectives with measurable key results for the team.",
+    "kind": "think",
+    "words": [],
+    "discipline": "leadership"
+   },
+   "ok": []
+  }
+ ]
+}

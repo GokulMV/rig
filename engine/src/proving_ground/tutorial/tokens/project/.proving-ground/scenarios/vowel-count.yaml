@@ -1,0 +1,17 @@
+id: vowel-count
+title: Vowel count
+kind: typical
+instruction: 'Add `vowel_count(text)` to textkit/count.py: how many vowels (a, e, i, o, u, in either case)
+  the text has, as an int.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.count import vowel_count
+  got = vowel_count("Hello World")
+  assert got == 3, f'vowel_count("Hello World") gave {got!r}'
+  got = vowel_count("AEIOU xyz")
+  assert got == 5, f'vowel_count("AEIOU xyz") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

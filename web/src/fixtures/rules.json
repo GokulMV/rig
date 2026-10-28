@@ -1,0 +1,250 @@
+{
+  "measurability": {
+    "states": {
+      "runnable": {
+        "label": "Measurable",
+        "tone": "positive",
+        "says": "Measure runs the tasks with it and without it, so the difference is its effect."
+      },
+      "same": {
+        "label": "In Every Run",
+        "tone": "neutral",
+        "says": "Already in the repo, so every trial starts with it, with and without the change. To measure a change to it, edit it (or add a new one) and pick that as the change on Measure."
+      },
+      "not_yet": {
+        "label": "Not Measurable Yet",
+        "tone": "warning",
+        "says": "Measure can't run this kind of change yet. It goes in the build brief."
+      },
+      "before_after": {
+        "label": "Changes the Code",
+        "tone": "neutral",
+        "says": "Changes the app's code, so it is measured before and after: make the change on a branch (or leave it uncommitted), then Measure runs the tasks on the commit before and on the change. It goes in the build brief too."
+      },
+      "brief": {
+        "label": "Brief Only",
+        "tone": "neutral",
+        "says": "Goes in the build brief as a task. There is nothing here for Measure to run."
+      },
+      "note": {
+        "label": "Diagram Note",
+        "tone": "neutral",
+        "says": "Only fixes the diagram: nothing changes in the code, so there is nothing to measure."
+      },
+      "enables": {
+        "label": "Adds a Task",
+        "tone": "positive",
+        "says": "Adds a task with a check, so Measure can test this step."
+      },
+      "step": {
+        "label": "Tasks Run Here",
+        "tone": "neutral",
+        "says": "Measure runs this step's tasks; a skill linked to it is measured on them."
+      },
+      "check": {
+        "label": "Runs the Checks",
+        "tone": "neutral",
+        "says": "The repo's tests, which a task's check can call. The same in every trial."
+      },
+      "app": {
+        "label": "App Part",
+        "tone": "neutral",
+        "says": "Part of the app, not the agent: Measure doesn't change it. Change it on a branch, and Measure runs the tasks before and after the change."
+      },
+      "planned": {
+        "label": "Not Written Yet",
+        "tone": "neutral",
+        "says": "Planned: BUILD.md asks for it. Write it first; then it can be measured."
+      },
+      "absent": {
+        "label": "Not in the Repo",
+        "tone": "neutral",
+        "says": "The repo doesn't have one, so there is nothing to measure."
+      },
+      "not_installed": {
+        "label": "Not Installed",
+        "tone": "warning",
+        "says": "Install a skill from it first (pick one in its details); then Measure can run it."
+      }
+    },
+    "treatments": {
+      "skill": "runnable",
+      "loop": "not_yet",
+      "config": "not_yet",
+      "hook": "runnable",
+      "mcp": "runnable",
+      "instructions": "runnable"
+    },
+    "kind_names": {
+      "skill": "skills",
+      "loop": "loops",
+      "config": "configs",
+      "hook": "hooks",
+      "mcp": "MCP servers",
+      "instructions": "CLAUDE.md files"
+    },
+    "setup_kinds": {
+      "CLAUDE.md": "same",
+      "AGENTS.md": "same",
+      "Hooks": "same",
+      "MCP servers": "same",
+      "Test command": "check",
+      "Subagents": "not_yet",
+      "Skills": "skill"
+    },
+    "code_kinds": [
+      "split",
+      "merge",
+      "move",
+      "reconnect",
+      "remove"
+    ],
+    "adds": {
+      "task": "enables",
+      "step": "brief"
+    },
+    "lanes": {
+      "setup": "Measure tests what you add or change here",
+      "flow": "Measure runs the tasks on these steps",
+      "arch": "Measure doesn't run this row"
+    },
+    "before_after": {
+      "mode": "A Code Change: Before and After",
+      "mode_agent": "An Agent Change: With and Without",
+      "lead": "Make the change on a branch (or leave it uncommitted), then measure it against the commit before. Rig doesn't write the change; you or your agent do.",
+      "base": "Before: the commit",
+      "after": "After: the change",
+      "working_tree": "your uncommitted changes",
+      "compare": "Before: the code at {base}. After: the code at {after}. Each arm's tasks and checks run on its own copy of that code, and its agent setup (CLAUDE.md, skills, hooks) is whatever that code has.",
+      "files": "{n} files differ",
+      "file": "1 file differs",
+      "same": "{after} has the same code as {base}, so a run would measure nothing. Make the change on a branch (or leave it uncommitted), then measure that.",
+      "not_git": "This repo isn't a git repo with a commit, so there is no commit to measure before and after. Commit it with git first.",
+      "unknown_ref": "{ref} isn't a commit or branch in this repo.",
+      "name": "{base} → {after}",
+      "arms": {
+        "with": "After",
+        "without": "Before"
+      },
+      "card": "before vs after",
+      "key": "Before vs after: \"after\" is the code at {after}, \"before\" the code at {base}.",
+      "measure_it": "Measure It",
+      "for": "Measuring “{title}”: pick the branch, commit or uncommitted changes that make it as the After side.",
+      "stage_lead": {
+        "agent": "Choose the tasks, then run the change on them with and without it. Each result gets a Rig score.",
+        "code": "Choose the tasks, then run them on the code before and after the change. Each result gets a Rig score."
+      },
+      "run_says": {
+        "agent": "Every task runs twice, with and without the change, so the difference is the change's.",
+        "code": "Every task runs twice, on the code before and after the change, so the difference is the change's."
+      }
+    },
+    "empty": {
+      "title": "Nothing Here Measure Can Run Yet",
+      "lead": "Measure runs {kinds}, with and without, on your tasks. Add a skill on Build (from the library, or drag it onto the canvas), or add or edit a CLAUDE.md, hook or MCP server in the repo.",
+      "go": "Add a Skill on Build"
+    }
+  },
+  "repo-goals": {
+    "agent_words": [
+      "agent",
+      "agents",
+      "coding agent",
+      "coding",
+      "claude.md",
+      "agents.md",
+      "skill",
+      "skills",
+      "hook",
+      "hooks",
+      "mcp",
+      "prompt",
+      "prompts",
+      "bug",
+      "bugs",
+      "bugfix",
+      "bug fix",
+      "bug fixes",
+      "fix",
+      "fixes",
+      "fixing",
+      "fixed",
+      "review",
+      "reviews",
+      "reviewing",
+      "test",
+      "tests",
+      "testing",
+      "refactor",
+      "refactors",
+      "refactoring",
+      "pull request",
+      "pull requests",
+      "pr",
+      "prs",
+      "lint",
+      "linting",
+      "convention",
+      "conventions",
+      "token",
+      "tokens",
+      "cost",
+      "costs",
+      "cheaper",
+      "spend",
+      "spending",
+      "context",
+      "context window",
+      "latency",
+      "speed",
+      "faster",
+      "slower",
+      "turns",
+      "pass rate"
+    ],
+    "templates": [
+      {
+        "id": "fewer-tokens",
+        "label": "Fewer Tokens at the Same Pass Rate",
+        "text": "Use fewer tokens on each task in this repo, without lowering how many tasks the agent gets right.",
+        "metric": "tokens"
+      },
+      {
+        "id": "lower-cost",
+        "label": "Lower Cost per Task",
+        "text": "Spend less per task in this repo, at the same pass rate.",
+        "metric": "cost"
+      },
+      {
+        "id": "fewer-wrong-fixes",
+        "label": "Fewer Wrong Bug Fixes",
+        "text": "Fix bugs in this repo right the first time: fewer fixes that look done but break something else.",
+        "metric": "pass_rate"
+      },
+      {
+        "id": "runs-tests",
+        "label": "Always Runs the Tests",
+        "text": "Always run this repo's tests before finishing, and show their output.",
+        "metric": "pass_rate"
+      },
+      {
+        "id": "conventions",
+        "label": "Follows Our Conventions",
+        "text": "Follow this repo's conventions: code style, where things go, naming, and what not to touch.",
+        "metric": "pass_rate"
+      },
+      {
+        "id": "faster",
+        "label": "Finishes Faster",
+        "text": "Finish tasks in this repo faster, at the same pass rate.",
+        "metric": "time"
+      }
+    ],
+    "metrics": [
+      "pass_rate",
+      "tokens",
+      "cost",
+      "time"
+    ]
+  }
+}

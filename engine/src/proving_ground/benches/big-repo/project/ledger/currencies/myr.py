@@ -1,0 +1,5 @@
+"""MYR."""
+
+CODE = "MYR"
+DECIMALS = 2
+SYMBOL = "MY"

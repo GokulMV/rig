@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+  body { font-family: sans-serif; }
+  .hint { color: #b0b0b0; background: #ffffff; font-size: 12px; }
+  .pay { background: #2a7; color: #fff; padding: 6px 10px; display: inline-block; cursor: pointer; }
+  .error { color: red; }
+</style>
+</head>
+<body>
+  <img src="logo.png">
+  <h1>Checkout</h1>
+  <form>
+    <input type="text" name="card" placeholder="Card number">
+    <p class="hint">We never store your card details.</p>
+    <p class="error">Invalid</p>
+    <div class="pay" onclick="pay()">Pay now</div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+"""CZK."""
+
+CODE = "CZK"
+DECIMALS = 2
+SYMBOL = "CZ"

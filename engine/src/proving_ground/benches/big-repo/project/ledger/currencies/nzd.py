@@ -1,0 +1,5 @@
+"""NZD."""
+
+CODE = "NZD"
+DECIMALS = 2
+SYMBOL = "NZ"

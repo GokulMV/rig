@@ -1,0 +1,5 @@
+"""HKD."""
+
+CODE = "HKD"
+DECIMALS = 2
+SYMBOL = "HK"

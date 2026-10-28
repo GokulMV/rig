@@ -1,0 +1,43 @@
+id,date,description,amount
+B-101,2026-10-01,Opening transfer,8000.00
+B-102,2026-10-01,Harbour Estates rent,-2450.00
+B-103,2026-10-02,Ergon Ltd,-480.50
+B-104,2026-10-05,Cloudly subscription,-60.00
+B-105,2026-10-05,Customer receipt ACME,2300.00
+B-106,2026-10-06,PaperCo,-312.40
+B-107,2026-10-07,Brightly,-720.00
+B-108,2026-10-08,Cloudly subscription,-60.00
+B-109,2026-10-08,SitWell,-1260.00
+B-110,2026-10-09,Customer receipt Northwind,1875.00
+B-111,2026-10-10,Courier Co,-95.00
+B-112,2026-10-12,Optix,-600.00
+B-113,2026-10-13,Card settlement,1342.18
+B-114,2026-10-14,Bank fee,-35.00
+B-115,2026-10-15,Courier Co,-95.00
+B-116,2026-10-16,Customer receipt Fabrikam,420.00
+B-117,2026-10-16,Payroll,-8400.00
+B-118,2026-10-19,HMRC VAT,-3120.55
+B-119,2026-10-20,Software licence,-18.99
+B-120,2026-10-20,Software licence,-18.99
+B-121,2026-10-20,Customer receipt Contoso,960.00
+B-122,2026-10-21,Netcraft Inc,-310.00
+B-123,2026-10-21,Hoch & Tief GmbH,-1010.00
+B-124,2026-10-22,Klavier GmbH,-539.40
+B-125,2026-10-23,Returned payment Netcraft Inc,310.00
+B-126,2026-10-23,Insurance,-250.00
+B-127,2026-10-26,Office Supplies refund,75.00
+B-128,2026-10-26,Utilities,-189.30
+B-129,2026-10-27,Customer receipt Northwind,1150.00
+B-130,2026-10-27,Tafel GmbH,-220.00
+B-131,2026-10-28,Northsound Ltd,-1146.60
+B-132,2026-10-29,Ergon Ltd,-1312.00
+B-133,2026-10-29,Card settlement,988.42
+B-134,2026-10-30,Interest,6.37
+B-135,2026-10-30,Payroll,-8400.00
+B-136,2026-10-30,FootFirst,-391.68
+B-137,2026-10-31,Customer receipt ACME,2300.00
+B-138,2026-10-31,Bank fee,-35.00
+B-139,2026-10-31,PaperCo,-1206.00
+B-140,2026-10-31,Courier Co,-42.00
+B-141,2026-10-13,Customer receipt Fabrikam (value-dated),420.00
+B-142,2026-10-12,Card settlement correction,-12.18

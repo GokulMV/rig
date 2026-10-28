@@ -1,0 +1,17 @@
+id: swap
+title: Swap case
+kind: typical
+instruction: 'Add `swap(text)` to textkit/case.py: the text with every lowercase letter made uppercase and
+  every uppercase letter made lowercase.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.case import swap
+  got = swap("Hello World")
+  assert got == 'hELLO wORLD', f'swap("Hello World") gave {got!r}'
+  got = swap("abc")
+  assert got == 'ABC', f'swap("abc") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

@@ -1,0 +1,346 @@
+{
+  "recorded": "2026-10-27",
+  "model": {
+    "file": "Qwen3.5-9B-Q4_0.gguf",
+    "id": "qwen3.5-9b",
+    "server": "llama.cpp 0.7.0 (build 11669): -c 65536 -np 1 --jinja, Qwen 3.5's own chat template with its system-message check turned into a system turn; thinking on (Claude Code asks for it)",
+    "agent": "claude-code",
+    "nudge": true,
+    "timeout_factor": 3
+  },
+  "skill": "price-tags-style",
+  "repeats": 1,
+  "tasks": [
+    {
+      "id": "discount",
+      "title": "Discount label",
+      "instruction": "Add `discount(percent)` to pricetags/tags.py: the label for a percentage off, such as 15 percent off.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 220.4,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 61.0,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "free-item",
+      "title": "Free items",
+      "instruction": "Add `tag(cents)` to pricetags/tags.py: the label for an item on the shelf, which may be given away at no charge.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 244.1,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 51.5,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "parse-price",
+      "title": "Read a label back",
+      "instruction": "Add `parse_price(text)` to pricetags/tags.py: the reverse of `price()`, turning a price label back into whole cents (an int).",
+      "with": [
+        {
+          "outcome": "fail",
+          "seconds": 921.4,
+          "detail": "timed out after 900 s"
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 102.9,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "per-100g",
+      "title": "Price per 100 g",
+      "instruction": "Add `per_100g(cents_per_kg)` to pricetags/tags.py: the label for the price per 100 g of a product priced per kg.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 360.7,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 146.8,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "price-range",
+      "title": "Price range",
+      "instruction": "Add `price_range(low, high)` to pricetags/tags.py: the label for a product sold in several sizes, from the cheapest price to the dearest (both in cents).",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 187.6,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 67.6,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "refund",
+      "title": "Refund label",
+      "instruction": "Add `refund(cents)` to pricetags/tags.py: the label for money given back to a customer. It takes the amount refunded in cents.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 163.6,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 921.2,
+          "detail": "timed out after 900 s"
+        }
+      ]
+    },
+    {
+      "id": "sale",
+      "title": "Sale label",
+      "instruction": "Add `sale(was, now)` to pricetags/tags.py: the label for a product on sale, showing its new price and its old one (both in cents).",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 248.4,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 66.2,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "total",
+      "title": "Basket total",
+      "instruction": "Add `total(prices)` to pricetags/tags.py: the label for the sum of a list of prices in cents.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 308.9,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "pass",
+          "seconds": 69.6,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "unit-price",
+      "title": "Price per unit",
+      "instruction": "Add `unit_price(cents, unit)` to pricetags/tags.py: the label for a price per unit, such as a price per kg.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 173.5,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 68.1,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "id": "with-tax",
+      "title": "Price with tax",
+      "instruction": "Add `with_tax(net_cents, rate)` to pricetags/tags.py: the label for a net price in cents with a tax rate in percent added, such as 23 for 23%.",
+      "with": [
+        {
+          "outcome": "pass",
+          "seconds": 253.7,
+          "detail": null
+        }
+      ],
+      "without": [
+        {
+          "outcome": "fail",
+          "seconds": 148.7,
+          "detail": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "headline": {
+      "n_pairs": 10,
+      "pass_with": 0.9,
+      "pass_without": 0.2,
+      "diff": 0.7,
+      "ci_low": 0.13950380052769806,
+      "ci_high": 0.9073099001306912
+    },
+    "verdict": "helps",
+    "mde": 0.5011627993967339,
+    "required_pairs": null,
+    "by_kind": {
+      "typical": {
+        "n_pairs": 7,
+        "pass_with": 0.8571428571428571,
+        "pass_without": 0.2857142857142857,
+        "diff": 0.5714285714285714,
+        "ci_low": -0.08678035266626005,
+        "ci_high": 0.8645578960389072
+      },
+      "edge": {
+        "n_pairs": 3,
+        "pass_with": 1.0,
+        "pass_without": 0.0,
+        "diff": 1.0,
+        "ci_low": 0.20592328245977842,
+        "ci_high": 1.0
+      }
+    },
+    "synthetic": null,
+    "errored": 0,
+    "broken": 0,
+    "total": 20,
+    "unreliable": false,
+    "cost_with": 0.0,
+    "cost_without": 0.0
+  },
+  "ledger": {
+    "total": 20,
+    "with": 10,
+    "without": 10,
+    "pairs": 10,
+    "logs_read": 10,
+    "clean": 18,
+    "timed_out": 2,
+    "errored": 0,
+    "broken": 0
+  },
+  "rig": {
+    "score": 78,
+    "band": "works_but",
+    "tone": "neutral",
+    "label": "Works, but the lift needs work",
+    "reason": "Lift could be as small as +14 pts",
+    "provisional": false,
+    "pairs": 10,
+    "parts": [
+      {
+        "id": "lift",
+        "name": "Lift",
+        "weight": 0.4,
+        "score": 55.8,
+        "detail": "lower bound +14 pts (target +25)",
+        "counted": true,
+        "weight_used": 0.4706
+      },
+      {
+        "id": "cost",
+        "name": "Cost",
+        "weight": 0.2,
+        "score": 100.0,
+        "detail": "costs nothing (a local model)",
+        "counted": true,
+        "weight_used": 0.2353
+      },
+      {
+        "id": "followed",
+        "name": "Followed",
+        "weight": 0.15,
+        "score": 100.0,
+        "detail": "opened the skill in 10 of the 10 \"with\" trials whose logs could be read",
+        "counted": true,
+        "weight_used": 0.1765
+      },
+      {
+        "id": "holds_up",
+        "name": "Holds up",
+        "weight": 0.15,
+        "score": null,
+        "detail": "This bench has no held-out tasks, so it's unknown whether this holds on unseen tasks",
+        "counted": false,
+        "weight_used": 0.0
+      },
+      {
+        "id": "reliable",
+        "name": "Reliable",
+        "weight": 0.1,
+        "score": 90.0,
+        "detail": "18 of 20 trials ran cleanly (10 with, 10 without)",
+        "counted": true,
+        "weight_used": 0.1176
+      }
+    ],
+    "gates": [],
+    "formula": {
+      "text": "40% × 55.8 + 20% × 100 + 15% × 100 + 10% × 90 = 66.3; ÷ 85% (weights rescaled to the measured parts; holds up not measured) = 78.0; rounded: 78",
+      "measured_weight": 0.85,
+      "raw": 78.02,
+      "not_measured": [
+        "holds up"
+      ]
+    },
+    "ledger": {
+      "total": 20,
+      "with": 10,
+      "without": 10,
+      "pairs": 10,
+      "logs_read": 10,
+      "clean": 18,
+      "timed_out": 2,
+      "errored": 0,
+      "broken": 0
+    },
+    "ledger_text": "20 trials (10 with, 10 without) · 10 complete pairs · 18 ran cleanly, 2 timed out · logs read for 10 of the 10 \"with\" trials",
+    "verdict": {
+      "id": "helps",
+      "word": "Helps",
+      "tone": "positive",
+      "reason": "9 of 10 passed with vs 2 of 10 passed without (+70 pts, 95% interval +14 to +91); takes 1.8× as long and timed out on 1 of 10.",
+      "next": "Next: use it, and measure again when the model or the tasks change.",
+      "facts": [
+        "Quality: 9 of 10 passed with, 2 of 10 passed without (+70 pts, 95% interval +14 to +91)",
+        "Cost: nothing (a local model)",
+        "Time: 5.1 min vs 2.8 min per trial (1.8×)",
+        "Reliability: with, 1 of 10 timed out; without, 1 of 10 timed out"
+      ]
+    },
+    "quality": "pass_rate"
+  },
+  "fingerprint": "c96a3d3034260f285888379dc03b145bdc3e171c4e458e448f9333194e1d818b"
+}

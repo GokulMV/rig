@@ -1,0 +1,5 @@
+"""AUD."""
+
+CODE = "AUD"
+DECIMALS = 2
+SYMBOL = "AU"

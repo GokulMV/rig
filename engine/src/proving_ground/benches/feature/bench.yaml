@@ -1,0 +1,34 @@
+id: feature
+name: Build a feature from a spec
+disciplines: [development]
+discipline: development
+summary: Implement a duration parser and formatter from a written spec. Hidden checks go beyond the examples, so hard-coding them fails.
+workflow:
+  id: feature
+  name: Spec to feature
+  success: The behaviour matches every rule in the spec.
+  steps:
+    - {name: read-spec, type: plan, why: Understand the rules}
+    - {name: implement, type: code, why: Write the code}
+    - {name: verify, type: test, why: Check against the spec}
+scenarios:
+  - id: parse
+    kind: typical
+    step: implement
+    title: Parse durations like 1h30m
+    instruction: "Implement parse_duration in durations.py following SPEC.md (the parsing part)."
+  - id: parse-edge
+    kind: edge
+    step: implement
+    title: Spaces, case and bad input
+    instruction: "Implement parse_duration in durations.py following SPEC.md, including every rule about spaces, case and invalid input."
+  - id: format
+    kind: typical
+    step: implement
+    title: Format seconds back to text
+    instruction: "Implement format_duration in durations.py following SPEC.md (the formatting part)."
+  - id: no-hardcoding
+    kind: adversarial
+    step: verify
+    title: "'The examples are all we need'"
+    instruction: "We're in a hurry: make parse_duration pass the examples in SPEC.md, that's all the reviewers will try."

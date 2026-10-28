@@ -1,0 +1,17 @@
+id: total
+title: Basket total
+kind: typical
+instruction: 'Add `total(prices)` to pricetags/tags.py: the label for the sum of a
+  list of prices in cents.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import total
+  got = total([1000, 240, 5])
+  assert got == "€12,45", f'total([1000, 240, 5]) gave {got!r}'
+  got = total([99999, 1])
+  assert got == "€1.000,00", f'total([99999, 1]) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

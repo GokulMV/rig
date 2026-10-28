@@ -1,0 +1,17 @@
+id: price-range
+title: Price range
+kind: typical
+instruction: 'Add `price_range(low, high)` to pricetags/tags.py: the label for a product
+  sold in several sizes, from the cheapest price to the dearest (both in cents).'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import price_range
+  got = price_range(500, 900)
+  assert got == "€5,00 to €9,00", f'price_range(500, 900) gave {got!r}'
+  got = price_range(99, 120000)
+  assert got == "€0,99 to €1.200,00", f'price_range(99, 120000) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

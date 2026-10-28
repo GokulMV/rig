@@ -1,0 +1,17 @@
+id: free-item
+title: Free items
+kind: edge
+instruction: 'Add `tag(cents)` to pricetags/tags.py: the label for an item on the
+  shelf, which may be given away at no charge.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import tag
+  got = tag(0)
+  assert got == "free", f'tag(0) gave {got!r}'
+  got = tag(150)
+  assert got == "€1,50", f'tag(150) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

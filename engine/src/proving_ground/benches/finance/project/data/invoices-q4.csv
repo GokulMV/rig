@@ -1,0 +1,7 @@
+invoice,supplier,po,line,qty,unit_price
+INV-3001,Brightly,PO-505,1,10,18.36
+INV-3002,Brightly,PO-505,1,10,18.00
+INV-3003,Brightly,PO-505,1,15,18.00
+INV-3004,SitWell,PO-502,1,5,210.00
+INV-3005,Ergon Ltd,PO-501,2,8,90.78
+INV-3006,Brightly,PO-505,1,10,18.00

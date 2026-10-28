@@ -1,0 +1,8 @@
+id,date,description,amount
+L-01,2026-10-01,Opening transfer,5000.00
+L-02,2026-10-02,Ergon Ltd INV-1001,-480.00
+L-03,2026-10-05,PaperCo INV-1004,-1260.00
+L-04,2026-10-08,ACME receipt,2300.00
+L-05,2026-10-15,SitWell INV-1003,-1050.00
+L-06,2026-10-22,Brightly INV-1006,-720.00
+L-07,2026-10-31,Northwind receipt,1150.00

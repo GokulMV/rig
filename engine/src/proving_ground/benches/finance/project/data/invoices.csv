@@ -1,0 +1,11 @@
+invoice,supplier,po,line,qty,unit_price
+INV-1001,Ergon Ltd,PO-501,1,20,24.00
+INV-1002,Ergon Ltd,PO-501,2,10,89.00
+INV-1003,SitWell,PO-502,1,5,219.00
+INV-1004,PaperCo,PO-503,1,40,31.50
+INV-1005,ScreenWorks,PO-504,1,8,240.00
+INV-1006,Brightly,PO-505,1,30,18.00
+INV-1006,Brightly,PO-505,2,30,6.00
+INV-1007,PaperCo,PO-509,1,10,31.50
+INV-1009,PaperCo,PO-503,1,40,31.50
+INV-1008,Brightly,PO-505,2,30,6.20

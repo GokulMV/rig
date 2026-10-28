@@ -1,0 +1,5 @@
+"""SAR."""
+
+CODE = "SAR"
+DECIMALS = 2
+SYMBOL = "SA"

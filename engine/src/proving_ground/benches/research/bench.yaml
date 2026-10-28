@@ -1,0 +1,26 @@
+id: research
+disciplines: [research, product, leadership]
+name: Write a research brief from sources
+discipline: research
+summary: Should a regional utility subsidise heat pumps? Four sources, two of which disagree on a key number. Every claim must be cited, the numbers must match the sources, and the disagreement must be reported, not hidden.
+workflow:
+  id: research
+  name: Research brief
+  success: An answer the sources support, with every claim cited and the conflicts stated.
+  steps:
+    - {name: gather, type: research, why: What each source says}
+    - {name: synthesise, type: research, why: Combine and compare}
+    - {name: write, type: write, why: The brief}
+scenarios:
+  - id: brief
+    kind: typical
+    step: synthesise
+    title: Heat-pump subsidy brief
+    instruction: "Using only the sources in sources/, write brief.md answering: should the utility fund a 2,000-household heat-pump subsidy next year? Start with a section '## Answer' (three sentences at most), then '## Evidence' and '## Uncertainties'. Cite every factual claim as [S1]-[S4]. Where sources disagree, say so and give both figures."
+    judge:
+      context: [sources]
+      rubric:
+        - "Answers the question directly, with a recommendation and its conditions."
+        - "Grounded: every factual claim is in the cited source; nothing beyond the sources."
+        - "Honest about disagreement: the conflicting figures are both reported, with why they may differ."
+        - "Proportionate: confidence in the answer matches the evidence."

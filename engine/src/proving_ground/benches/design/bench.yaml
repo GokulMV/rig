@@ -1,0 +1,25 @@
+id: design
+disciplines: [design, qa]
+name: UX review of a checkout page
+discipline: design
+summary: A checkout page with five planted usability and accessibility problems. The review must find them, rank them and propose concrete fixes.
+workflow:
+  id: design
+  name: UX review
+  success: Every real problem found, ranked, with a fix someone can build.
+  steps:
+    - {name: inspect, type: research, why: Look at the page}
+    - {name: review, type: design, why: Find and rank problems}
+    - {name: propose, type: write, why: The fixes}
+scenarios:
+  - id: ux-review
+    kind: typical
+    step: review
+    title: Review the checkout page
+    instruction: "Review page/checkout.html for usability and accessibility. Write review.md: one '### ' heading per problem, each with Severity (high, medium or low), what's wrong, who it hurts, and a concrete fix (the change to the markup or style)."
+    judge:
+      context: [page]
+      rubric:
+        - "Finds the real problems on this page, not generic advice."
+        - "Ranks them sensibly: what blocks checkout or excludes people comes first."
+        - "Each fix is concrete enough to build (names the element and the change)."

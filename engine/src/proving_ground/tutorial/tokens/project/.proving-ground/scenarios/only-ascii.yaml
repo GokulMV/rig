@@ -1,0 +1,17 @@
+id: only-ascii
+title: Only ASCII
+kind: typical
+instruction: 'Add `only_ascii(text)` to textkit/clean.py: the text with every character that isn''t ASCII
+  removed.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.clean import only_ascii
+  got = only_ascii("café olé")
+  assert got == 'caf ol', f'only_ascii("café olé") gave {got!r}'
+  got = only_ascii("plain")
+  assert got == 'plain', f'only_ascii("plain") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

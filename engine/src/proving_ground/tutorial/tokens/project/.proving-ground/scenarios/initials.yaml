@@ -1,0 +1,17 @@
+id: initials
+title: Initials
+kind: typical
+instruction: 'Add `initials(name)` to textkit/case.py: the first letter of each word, in capitals, with nothing
+  between them, such as `AL` for "ada lovelace".'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.case import initials
+  got = initials("ada lovelace")
+  assert got == 'AL', f'initials("ada lovelace") gave {got!r}'
+  got = initials("grace brewster hopper")
+  assert got == 'GBH', f'initials("grace brewster hopper") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

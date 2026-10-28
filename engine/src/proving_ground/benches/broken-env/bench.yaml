@@ -1,0 +1,29 @@
+id: broken-env
+disciplines: [devops, development]
+name: Fix a broken environment
+discipline: devops
+summary: A small Python tool whose code and tests are correct but whose environment isn't - a test runner that can't import the package, a missing settings file, a generated file that was never generated. Each check runs the repo's own script and fails if src/ or tests/ were edited to get there.
+workflow:
+  id: broken-env
+  name: Environment repair
+  success: The repo's own scripts pass on a fresh checkout, with the code and tests untouched.
+  steps:
+    - {name: reproduce, type: test, why: See the failure}
+    - {name: diagnose, type: research, why: Find what's missing}
+    - {name: fix, type: code, why: Fix the environment}
+scenarios:
+  - id: import-path
+    kind: typical
+    step: diagnose
+    title: Tests can't import the package
+    instruction: "On a fresh checkout `bash scripts/test.sh` fails. Make it pass. The code and the tests are correct: don't change anything in src/ or tests/."
+  - id: missing-config
+    kind: edge
+    step: fix
+    title: The report needs settings that aren't there
+    instruction: "`bash scripts/smoke.sh` fails on a fresh checkout. Make it work for this repo's sample data (the warehouse is main). Don't change src/, tests/ or the example settings."
+  - id: generated-file
+    kind: edge
+    step: fix
+    title: A generated file is missing
+    instruction: "`bash scripts/version.sh` fails on a fresh checkout. Make it print the version, the way the README says the project does it. Don't change src/ or tests/ by hand."

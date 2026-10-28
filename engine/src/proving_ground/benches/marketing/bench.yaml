@@ -1,0 +1,26 @@
+id: marketing
+disciplines: [marketing]
+name: Write a launch post from product facts
+discipline: marketing
+summary: Launch a scheduling feature for clinics. Product facts and brand rules are given; the post must get the facts and price right, avoid banned claims, and land with the audience.
+workflow:
+  id: marketing
+  name: Launch post
+  success: A post the audience understands, with every claim true.
+  steps:
+    - {name: message, type: plan, why: Who and what}
+    - {name: draft, type: write, why: The post}
+    - {name: check, type: review, why: Facts and claims}
+scenarios:
+  - id: launch
+    kind: typical
+    step: draft
+    title: Launch post for Smart Scheduling
+    instruction: "Write post.md: a 150-300 word launch post for clinic managers announcing Smart Scheduling, using only FACTS.md and following BRAND.md."
+    judge:
+      context: [FACTS.md, BRAND.md]
+      rubric:
+        - "Speaks to clinic managers' problem (no-shows, double booking) in their words."
+        - "Every claim is supported by FACTS.md; nothing invented or exaggerated."
+        - "Clear call to action that matches the beta terms."
+        - "Follows BRAND.md tone."

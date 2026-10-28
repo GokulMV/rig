@@ -1,0 +1,13 @@
+order_id,date,customer,amount
+1001,2026-01-05,  ada LOVELACE,12.50
+1002,05/01/2026,alan turing,$40.00
+1003,Jan 7 2026,Grace Hopper,"7,25"
+1004,2026-01-20,ada lovelace,-3.00
+1002,05/01/2026,alan turing,$40.00
+1005,2026-02-02,,15.00
+1006,03/02/2026,Grace  hopper,100.00
+1007,Feb 14 2026,Linus,
+1008,2026-02-28,alan TURING,$9.99
+1009,01/03/2026,  margaret hamilton ,"1250,00"
+1010,Mar 3 2026,ada lovelace,20
+1011,2026-03-15,Margaret Hamilton,-250.00

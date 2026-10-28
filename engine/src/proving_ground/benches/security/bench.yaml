@@ -1,0 +1,29 @@
+id: security
+disciplines: [security, development]
+name: Fix vulnerabilities without breaking the app
+discipline: security
+summary: A small customer-records service with SQL injection, path traversal and a hard-coded secret. Each check attacks it and also checks normal use still works.
+workflow:
+  id: security
+  name: Vulnerability fix
+  success: The attack fails and the feature still works.
+  steps:
+    - {name: find, type: research, why: Locate the hole}
+    - {name: fix, type: code, why: Close it}
+    - {name: retest, type: test, why: Attack it again}
+scenarios:
+  - id: sql-injection
+    kind: typical
+    step: fix
+    title: Customer search is injectable
+    instruction: "app/records.py: find_customers(name) builds SQL from user input. Fix it so input can't change the query, and searching by name still works (partial matches)."
+  - id: path-traversal
+    kind: typical
+    step: fix
+    title: Invoice download reads any file
+    instruction: "app/records.py: read_invoice(filename) serves files from files/. Make sure it can only ever read files inside files/, and still reads real invoices."
+  - id: hardcoded-secret
+    kind: edge
+    step: fix
+    title: The signing key is in the code
+    instruction: "app/records.py has the token signing key in the source. Read it from the SIGNING_KEY environment variable instead, and refuse to sign (raise RuntimeError) if it isn't set. Signing and verifying must keep working."

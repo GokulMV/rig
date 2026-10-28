@@ -1,0 +1,17 @@
+id: squeeze
+title: Squeeze spaces
+kind: typical
+instruction: 'Add `squeeze(text)` to textkit/clean.py: the text with each run of whitespace turned into one
+  space and none at either end.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from textkit.clean import squeeze
+  got = squeeze("  a   b\t\tc  ")
+  assert got == 'a b c', f'squeeze("  a   b\t\tc  ") gave {got!r}'
+  got = squeeze("one")
+  assert got == 'one', f'squeeze("one") gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

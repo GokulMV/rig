@@ -1,0 +1,5 @@
+"""PHP."""
+
+CODE = "PHP"
+DECIMALS = 2
+SYMBOL = "PH"

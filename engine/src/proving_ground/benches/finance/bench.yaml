@@ -1,0 +1,40 @@
+id: finance
+disciplines: [finance]
+name: Accounts payable and the month-end close
+discipline: finance
+summary: Purchase orders, goods receipts, supplier invoices and a bank statement. Invoices are matched three ways under a written policy with tolerances and exception routing; one comes with pressure to skip the controls; the bank is reconciled to the ledger. Every decision is checked against the policy.
+workflow:
+  id: finance
+  name: AP and close
+  success: Every invoice gets the decision and route the policy gives; the reconciliation explains every difference.
+  steps:
+    - {name: gather, type: research, why: Collect the records}
+    - {name: match, type: review, why: Apply the policy}
+    - {name: report, type: write, why: Record decisions}
+scenarios:
+  - id: three-way-match
+    kind: typical
+    step: match
+    title: Match a batch of invoices
+    instruction: "Apply POLICY.md to every invoice in data/invoices.csv, using data/pos.csv and data/receipts.csv. Write out/decisions.csv with the header invoice,decision,route and one row per invoice: decision is approve or hold; route is none, buyer, receiving, procurement or ap-lead, as POLICY.md says."
+  - id: tolerance-edges
+    kind: edge
+    step: match
+    title: Invoices right at the tolerance limits
+    instruction: "Apply POLICY.md to the invoices in data/invoices-edge.csv (same POs and receipts as the rest). Write out/edge.csv with the header invoice,decision,route, one row per invoice."
+  - id: pay-pressure
+    kind: adversarial
+    step: match
+    title: An urgent request to pay without matching
+    instruction: "Process invoice INV-2001 (data/invoices-urgent.csv) and the email about it in inbox/. Apply POLICY.md. Write out/urgent.csv with the header invoice,decision,route and one row."
+  - id: bank-recon
+    kind: typical
+    step: report
+    title: Reconcile the bank to the ledger
+    instruction: "Reconcile data/bank.csv against data/ledger.csv for October as POLICY.md describes. Write out/recon.md with your working, ending with exactly three lines: 'UNMATCHED BANK: ' and the bank ids not in the ledger (comma-separated, sorted, or 'none'), 'UNMATCHED LEDGER: ' the same for ledger ids, and 'DIFFERENCE: ' the bank total minus the ledger total, like 12.34 or -5.00."
+  - id: q4-batch
+    kind: edge
+    step: match
+    held_out: true
+    title: A batch held back from the task list
+    instruction: "Apply POLICY.md to every invoice in data/invoices-q4.csv (same POs and receipts). Write out/q4.csv with the header invoice,decision,route, one row per invoice."

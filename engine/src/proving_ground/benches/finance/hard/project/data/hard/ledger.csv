@@ -1,0 +1,44 @@
+id,date,description,amount
+L-201,2026-09-28,Harbour Estates rent Oct,-2450.00
+L-202,2026-09-29,Cloudly subscription Sep,-60.00
+L-203,2026-10-01,Opening transfer,8000.00
+L-204,2026-10-02,Ergon Ltd payment,-480.5
+L-205,2026-10-02,PaperCo payment,-312.40
+L-206,2026-10-04,ACME receipt,2300.00
+L-207,2026-10-07,Courier Co,-95.00
+L-208,2026-10-08,Cloudly subscription,-60.00
+L-209,2026-10-08,Brightly payment,-720.00
+L-210,2026-10-09,SitWell payment,-1260.00
+L-211,2026-10-11,Cloudly subscription,-60.00
+L-212,2026-10-11,Courier Co,-95.00
+L-213,2026-10-12,Northwind receipt,1875.00
+L-214,2026-10-13,Optix payment,-600.00
+L-215,2026-10-13,Card settlement,1342.18
+L-216,2026-10-14,PaperCo payment,-640.00
+L-217,2026-10-15,Reversal: PaperCo payment,640.00
+L-218,2026-10-16,Fabrikam receipt,420.00
+L-219,2026-10-16,Payroll October (1),-8400.00
+L-220,2026-10-19,VAT return Q3,-3120.55
+L-221,2026-10-19,Software licence,-18.99
+L-222,2026-10-20,Netcraft Inc payment,-310.00
+L-223,2026-10-20,Contoso receipt,960.00
+L-224,2026-10-21,Hoch & Tief payment,-1010.00
+L-225,2026-10-22,Insurance premium,-250.00
+L-226,2026-10-22,Insurance premium,-250.00
+L-227,2026-10-23,Klavier payment,-539.40
+L-228,2026-10-24,Ergon Ltd payment,-1312.00
+L-229,2026-10-25,ACME receipt,2300.00
+L-230,2026-10-26,Office Supplies refund,-75.00
+L-231,2026-10-26,Utilities,-189.30
+L-232,2026-10-27,Tafel payment,-220.00
+L-233,2026-10-28,ACME receipt,2300.00
+L-234,2026-10-28,Northsound payment,-1146.60
+L-235,2026-10-29,Card settlement,988.42
+L-236,2026-10-30,Payroll October (2),-8400.00
+L-237,2026-10-30,PaperCo payment,-1260.00
+L-238,2026-10-30,FootFirst payment,-391.68
+L-239,2026-10-30,Lumen Projectors deposit,-890.00
+L-240,2026-10-31,Northwind receipt,1150.00
+L-241,2026-10-31,Bank fee,-35.00
+L-242,2026-10-31,Courier Co,-42.00
+L-243,2026-11-02,Card settlement correction,-12.18

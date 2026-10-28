@@ -1,0 +1,5 @@
+"""ZAR."""
+
+CODE = "ZAR"
+DECIMALS = 2
+SYMBOL = "ZA"

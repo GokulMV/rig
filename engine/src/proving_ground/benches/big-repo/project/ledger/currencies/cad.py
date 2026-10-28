@@ -1,0 +1,5 @@
+"""CAD."""
+
+CODE = "CAD"
+DECIMALS = 2
+SYMBOL = "CA"

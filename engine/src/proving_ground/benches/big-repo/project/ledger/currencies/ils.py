@@ -1,0 +1,5 @@
+"""ILS."""
+
+CODE = "ILS"
+DECIMALS = 2
+SYMBOL = "IL"

@@ -1,0 +1,17 @@
+id: sale
+title: Sale label
+kind: typical
+instruction: 'Add `sale(was, now)` to pricetags/tags.py: the label for a product on
+  sale, showing its new price and its old one (both in cents).'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import sale
+  got = sale(999, 799)
+  assert got == "€7,99 (was €9,99)", f'sale(999, 799) gave {got!r}'
+  got = sale(150000, 99900)
+  assert got == "€999,00 (was €1.500,00)", f'sale(150000, 99900) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

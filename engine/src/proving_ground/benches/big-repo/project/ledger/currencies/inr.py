@@ -1,0 +1,5 @@
+"""INR."""
+
+CODE = "INR"
+DECIMALS = 2
+SYMBOL = "IN"

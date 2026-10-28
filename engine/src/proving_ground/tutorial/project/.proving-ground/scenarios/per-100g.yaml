@@ -1,0 +1,17 @@
+id: per-100g
+title: Price per 100 g
+kind: edge
+instruction: 'Add `per_100g(cents_per_kg)` to pricetags/tags.py: the label for the
+  price per 100 g of a product priced per kg.'
+check: |
+  python3 -m unittest -q && python3 - <<'PY'
+  from pricetags.tags import per_100g
+  got = per_100g(1250)
+  assert got == "€1,25 / 100 g", f'per_100g(1250) gave {got!r}'
+  got = per_100g(1245)
+  assert got == "€1,25 / 100 g", f'per_100g(1245) gave {got!r}'
+  print('ok')
+  PY
+timeout: 300
+check_status: approved
+origin: user

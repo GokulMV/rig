@@ -1,0 +1,5 @@
+# Rig's website: every crawler, search and AI alike, is welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://rig-it.dev/sitemap.xml

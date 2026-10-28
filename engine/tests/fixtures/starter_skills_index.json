@@ -1,0 +1,775 @@
+{
+ "note": "Snapshot of the real starter-skills index (catalog/starter.py over anthropics/skills, obra/superpowers, wshobson/agents, trailofbits/skills), fetched with gh on 2026-10-25. Frozen so the matcher evaluation is reproducible offline.",
+ "skills": [
+  {
+   "path": "github:anthropics/skills/skills/academy-guide",
+   "name": "academy-guide",
+   "description": "Stop and check this skill before finishing any reply to a question about how to use Claude or a Claude product \u2014 it recommends matching courses, tutorials, and use cases from Claude Academy (academy.claude.com), Anthropic's learning hub. Trigger on: \"how do I\", \"how can I\", \"getting started with\", \"",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/algorithmic-art",
+   "name": "algorithmic-art",
+   "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avo",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/brand-guidelines",
+   "name": "brand-guidelines",
+   "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/discernment-nudge",
+   "name": "discernment-nudge",
+   "description": "After you give a substantive answer or draft that the user may act on \u2014 advice or recommendations, drafted artifacts such as goals, plans, pitches, proposals, or emails, estimates or projections, analysis or interpretation of data, factual claims they may rely on, or a multi-step argument \u2014 invoke t",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/doc-coauthoring",
+   "name": "doc-coauthoring",
+   "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/docx",
+   "name": "docx",
+   "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of conte",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/frontend-design",
+   "name": "frontend-design",
+   "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/internal-comms",
+   "name": "internal-comms",
+   "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident rep",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/mcp-builder",
+   "name": "mcp-builder",
+   "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/pdf",
+   "name": "pdf",
+   "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, ext",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/pptx",
+   "name": "pptx",
+   "description": "Use this skill any time a .pptx or .potx file is involved in any way \u2014 as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an em",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/skill-creator",
+   "name": "skill-creator",
+   "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better t",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/slack-gif-creator",
+   "name": "slack-gif-creator",
+   "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/webapp-testing",
+   "name": "webapp-testing",
+   "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:anthropics/skills/skills/xlsx",
+   "name": "xlsx",
+   "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spr",
+   "source": "github",
+   "repo": "anthropics/skills"
+  },
+  {
+   "path": "github:obra/superpowers/skills/brainstorming",
+   "name": "brainstorming",
+   "description": "You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/diagnosing-superpowers",
+   "name": "diagnosing-superpowers",
+   "description": "Use when a superpowers session went wrong and your human partner wants to know why \u2014 repeated work, ignored plans, stumbles, poor results, a skill that didn't fire, \"it took too long\", \"why is it so expensive\", \"what is it doing\" \u2014 or wants to build a bug report for the superpowers maintainers, for ",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/dispatching-parallel-agents",
+   "name": "dispatching-parallel-agents",
+   "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/executing-plans",
+   "name": "executing-plans",
+   "description": "Use when executing an implementation plan in the current session as the implementer yourself \u2014 your human partner chose inline execution, or no subagent tool is available",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/finishing-a-development-branch",
+   "name": "finishing-a-development-branch",
+   "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/receiving-code-review",
+   "name": "receiving-code-review",
+   "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/requesting-code-review",
+   "name": "requesting-code-review",
+   "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/subagent-driven-development",
+   "name": "subagent-driven-development",
+   "description": "Use when executing implementation plans with independent tasks in the current session",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/systematic-debugging",
+   "name": "systematic-debugging",
+   "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/test-driven-development",
+   "name": "test-driven-development",
+   "description": "Use when implementing any feature or bugfix, before writing implementation code",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/using-git-worktrees",
+   "name": "using-git-worktrees",
+   "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/using-superpowers",
+   "name": "using-superpowers",
+   "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/verification-before-completion",
+   "name": "verification-before-completion",
+   "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/writing-plans",
+   "name": "writing-plans",
+   "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:obra/superpowers/skills/writing-skills",
+   "name": "writing-skills",
+   "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+   "source": "github",
+   "repo": "obra/superpowers"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/accessibility-compliance/skills/screen-reader-testing",
+   "name": "screen-reader-testing",
+   "description": "Test web applications with screen readers including VoiceOver, NVDA, and JAWS. Use when validating screen reader compatibility, debugging accessibility issues, or ensuring assistive technology support.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/agent-teams/skills/parallel-feature-development",
+   "name": "parallel-feature-development",
+   "description": "Coordinate parallel feature development with file ownership strategies, conflict avoidance rules, and integration patterns for multi-agent implementation. Use this skill when decomposing a large feature into independent work streams, when two or more agents need to implement different layers of the ",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/avoid-ai-writing/skills/avoid-ai-writing",
+   "name": "avoid-ai-writing",
+   "description": "Audit and rewrite prose so it stops reading as machine-generated. Use this skill when asked to remove AI-isms, clean up AI writing, edit a draft for AI tells, audit a README, changelog, release note, PR description, or blog post for machine-sounding prose, or make text sound less like AI. Supports a",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/backend-development/skills/event-store-design",
+   "name": "event-store-design",
+   "description": "Design and implement event stores for event-sourced systems. Use when building event sourcing infrastructure, choosing event store technologies, or implementing event persistence patterns.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/backend-development/skills/workflow-orchestration-patterns",
+   "name": "workflow-orchestration-patterns",
+   "description": "Design durable workflows with Temporal for distributed systems. Covers workflow vs activity separation, saga patterns, state management, and determinism constraints. Use when building long-running processes, distributed transactions, or microservice orchestration.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/blockchain-web3/skills/solidity-security",
+   "name": "solidity-security",
+   "description": "Master smart contract security best practices to prevent common vulnerabilities and implement secure Solidity patterns. Use when writing smart contracts, auditing existing contracts, or implementing security measures for blockchain applications.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/business-analytics/skills/kpi-dashboard-design",
+   "name": "kpi-dashboard-design",
+   "description": "Design effective KPI dashboards with metrics selection, visualization best practices, and real-time monitoring patterns. Use this skill when building an executive SaaS metrics dashboard tracking MRR, churn, and LTV/CAC ratios; designing an operations center with live service health and request throu",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/cloud-infrastructure/skills/cost-optimization",
+   "name": "cost-optimization",
+   "description": "Optimize cloud costs across AWS, Azure, GCP, and OCI through resource rightsizing, tagging strategies, reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing infrastructure costs, or implementing cost governance policies.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/cloud-infrastructure/skills/multi-cloud-architecture",
+   "name": "multi-cloud-architecture",
+   "description": "Design multi-cloud architectures using a decision framework to select and integrate services across AWS, Azure, GCP, and OCI. Use when building multi-cloud systems, avoiding vendor lock-in, or leveraging best-of-breed services from multiple providers.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/conductor/skills/track-management",
+   "name": "track-management",
+   "description": "Use this skill when creating, managing, or working with Conductor tracks - the logical work units for features, bugs, and refactors. Applies to spec.md, plan.md, and track lifecycle operations.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/data-engineering/skills/dbt-transformation-patterns",
+   "name": "dbt-transformation-patterns",
+   "description": "Master dbt (data build tool) for analytics engineering with model organization, testing, documentation, and incremental strategies. Use when building data transformations, creating data models, or implementing analytics engineering best practices.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/developer-essentials/skills/bazel-build-optimization",
+   "name": "bazel-build-optimization",
+   "description": "Optimize Bazel builds for large-scale monorepos. Use when configuring Bazel, implementing remote execution, or optimizing build performance for enterprise codebases.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/developer-essentials/skills/git-advanced-workflows",
+   "name": "git-advanced-workflows",
+   "description": "Master advanced Git workflows including rebasing, cherry-picking, bisect, worktrees, and reflog to maintain clean history and recover from any situation. Use when managing complex Git histories, collaborating on feature branches, or troubleshooting repository issues.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/dgx-spark-ops/skills/spark-environment-setup",
+   "name": "spark-environment-setup",
+   "description": "Set up a working ML training/inference environment on NVIDIA DGX Spark (GB10, aarch64, CUDA 13). Use when installing PyTorch/Unsloth/TRL/vLLM on DGX Spark, hitting libcudart or wheel-ABI errors on aarch64, or choosing between NGC containers and bare pip installs.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/documentation-generation/skills/changelog-automation",
+   "name": "changelog-automation",
+   "description": "Automate changelog generation from commits, PRs, and releases following Keep a Changelog format. Use when setting up release workflows, generating release notes, or standardizing commit conventions.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/file-conversion/skills/file-conversion",
+   "name": "file-conversion",
+   "description": "Use when the user needs a local file converted between common image, audio, video, document, or data formats. Select installed tools, preserve originals, and verify the output.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/frontend-mobile-development/skills/nextjs-app-router-patterns",
+   "name": "nextjs-app-router-patterns",
+   "description": "Master Next.js 14+ App Router with Server Components, streaming, parallel routes, and advanced data fetching. Use when building Next.js applications, implementing SSR/SSG, or optimizing React Server Components.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/game-development/skills/godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "description": "Master Godot 4 GDScript patterns including signals, scenes, state machines, and optimization. Use when building Godot games, implementing game systems, or learning GDScript best practices.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/incident-response/skills/connectivity-triage",
+   "name": "connectivity-triage",
+   "description": "Use this skill when debugging active macOS connectivity failures, when an API or MCP service times out or disconnects, when DNS resolution is failing or inconsistent, or when video calls or other interactive traffic show packet loss or latency. Isolate local-LAN, DNS, upstream-path, and remote-servi",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/javascript-typescript/skills/javascript-testing-patterns",
+   "name": "javascript-testing-patterns",
+   "description": "Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mocking, fixtures, and test-driven development. Use when writing JavaScript/TypeScript tests, setting up test infrastructure, or implementing TDD/BDD work",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+   "name": "helm-chart-scaffolding",
+   "description": "Design, organize, and manage Helm charts for templating and packaging Kubernetes applications with reusable configurations. Use when creating Helm charts, packaging Kubernetes applications, or implementing templated deployments.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/llm-application-dev/skills/langchain-architecture",
+   "name": "langchain-architecture",
+   "description": "Design LLM applications using LangChain 1.x and LangGraph for agents, memory, and tool integration. Use when building LangChain applications, implementing AI agents, or creating complex LLM workflows.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/llm-application-dev/skills/similarity-search-patterns",
+   "name": "similarity-search-patterns",
+   "description": "Implement efficient similarity search with vector databases. Use when building semantic search, implementing nearest neighbor queries, or optimizing retrieval performance.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/llm-finetuning/skills/finetuning-method-selection",
+   "name": "finetuning-method-selection",
+   "description": "Decide whether to fine-tune at all, and route to the right method (SFT, DPO/ORPO/KTO, GRPO/RLVR, continued pretraining) and base model. Use when starting any fine-tuning effort, when unsure whether RAG or prompting would suffice, or when choosing between preference-optimization and reinforcement met",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/llm-finetuning/skills/trace-to-training-data",
+   "name": "trace-to-training-data",
+   "description": "Convert evaluation traces and production logs into SFT examples and preference pairs. Use when graded traces or failure examples exist and need to become training data, when applying rejection sampling to model outputs, or when building DPO pairs from passing and failing runs.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/observability-monitoring/skills/distributed-tracing",
+   "name": "distributed-tracing",
+   "description": "Implement distributed tracing with Jaeger and Tempo to track requests across microservices and identify performance bottlenecks. Use when debugging microservices, analyzing request flows, or implementing observability for distributed systems.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/payment-processing/skills/paypal-integration",
+   "name": "paypal-integration",
+   "description": "Integrate PayPal payment processing with support for express checkout, subscriptions, and refund management. Use when implementing PayPal payments, processing online transactions, or building e-commerce checkout flows.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/pptx-deck-creation/skills/pptx-deck-context",
+   "name": "pptx-deck-context",
+   "description": "Use when preparing the narrative, sources, and design context for a new editable PPTX deck.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/protect-mcp/skills/protect-mcp-setup",
+   "name": "protect-mcp-setup",
+   "description": "Configure Cedar policy enforcement and Ed25519 signed receipts for Claude Code tool calls. Use when setting up projects that need cryptographic audit trails, policy-gated tool execution, or compliance-ready evidence of agent actions.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/python-development/skills/python-configuration",
+   "name": "python-configuration",
+   "description": "Python configuration management via environment variables and typed settings. Use when externalizing config, setting up pydantic-settings, managing secrets, or implementing environment-specific behavior.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/python-development/skills/python-packaging",
+   "name": "python-packaging",
+   "description": "Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python libraries, creating CLI tools, or distributing Python code.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/python-development/skills/python-testing-patterns",
+   "name": "python-testing-patterns",
+   "description": "Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test suites, or implementing testing best practices.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/reverse-engineering/skills/anti-reversing-techniques",
+   "name": "anti-reversing-techniques",
+   "description": "Understand anti-reversing, obfuscation, and protection techniques encountered during software analysis. Use this skill when analyzing malware evasion techniques, when implementing anti-debugging protections for CTF challenges, when reverse engineering packed binaries, or when building security resea",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/review-agent-governance/skills/review-agent-setup",
+   "name": "review-agent-setup",
+   "description": "Configure human-in-the-loop gating for AI agent review actions in Claude Code. Use when setting up a project where an agent may post PR reviews, comments, merges, or edit CI configuration, and you want a cryptographically auditable approval trail with Cedar-enforced gates.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/security-scanning/skills/threat-mitigation-mapping",
+   "name": "threat-mitigation-mapping",
+   "description": "Map identified threats to appropriate security controls and mitigations. Use when prioritizing security investments, creating remediation plans, or validating control effectiveness.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/ship-mate/skills/scan",
+   "name": "scan",
+   "description": "Scans the codebase to generate project-doc.md and AGENTS.md. Use when bootstrapping a new agent-driven repo, refreshing project documentation after architectural changes, or running a delta scan to detect drift. Runs a full scan on first use and a smart delta scan on subsequent runs. Uses understand",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/social-publishing/skills/social-publishing",
+   "name": "social-publishing",
+   "description": "Schedule and publish social media posts across 13 platforms (X, LinkedIn, Instagram, Facebook Pages, TikTok, Discord, Telegram, YouTube, Reddit, WordPress, Pinterest) via the SocialClaw API. Use when the user wants to publish, schedule, or manage social media content programmatically. Requires SOCIA",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/startup-business-analyst/skills/team-composition-analysis",
+   "name": "team-composition-analysis",
+   "description": "Design optimal team structures, hiring plans, compensation strategies, and equity allocation for early-stage startups from pre-seed through Series A. Use this skill when planning headcount, determining which roles to hire next, setting compensation or equity ranges, designing org structure, or build",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/systems-programming/skills/rust-async-patterns",
+   "name": "rust-async-patterns",
+   "description": "Master Rust async programming with Tokio, async traits, error handling, and concurrent patterns. Use when building async Rust applications, implementing concurrent systems, or debugging async code.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:wshobson/agents/plugins/ui-design/skills/mobile-ios-design",
+   "name": "mobile-ios-design",
+   "description": "Master iOS Human Interface Guidelines and SwiftUI patterns for building native iOS apps. Use when designing iOS interfaces, implementing SwiftUI views, or ensuring apps follow Apple's design principles.",
+   "source": "github",
+   "repo": "wshobson/agents"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/agentic-actions-auditor/skills/agentic-actions-auditor",
+   "name": "agentic-actions-auditor",
+   "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations including Claude Code Action, Gemini CLI, OpenAI Codex, and GitHub AI Inference. Detects attack vectors where attacker-controlled input reaches AI agents running in CI/CD pipelines, including env var intermediary p",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/building-secure-contracts/skills/algorand-vulnerability-scanner",
+   "name": "algorand-vulnerability-scanner",
+   "description": "Scans Algorand smart contracts for 11 common vulnerabilities including rekeying attacks, unchecked transaction fees, missing field validations, and access control issues. Use when auditing Algorand projects (TEAL/PyTeal).",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/building-secure-contracts/skills/cairo-vulnerability-scanner",
+   "name": "cairo-vulnerability-scanner",
+   "description": "Scans Cairo/StarkNet smart contracts for 6 critical vulnerabilities including felt252 arithmetic overflow, L1-L2 messaging issues, address conversion problems, and signature replay. Use when auditing StarkNet projects.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/building-secure-contracts/skills/guidelines-advisor",
+   "name": "guidelines-advisor",
+   "description": "Smart contract development advisor based on Trail of Bits' best practices. Analyzes codebase to generate documentation/specifications, review architecture, check upgradeability patterns, assess implementation quality, identify pitfalls, review dependencies, and evaluate testing. Use when asking whet",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/building-secure-contracts/skills/solana-vulnerability-scanner",
+   "name": "solana-vulnerability-scanner",
+   "description": "Scans Solana programs for 6 critical vulnerabilities including arbitrary CPI, improper PDA validation, missing signer/ownership checks, and sysvar spoofing. Use when auditing Solana/Anchor programs.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/building-secure-contracts/skills/ton-vulnerability-scanner",
+   "name": "ton-vulnerability-scanner",
+   "description": "Scans TON (The Open Network) smart contracts for 3 critical vulnerabilities including integer-as-boolean misuse, fake Jetton contracts, and forward TON without gas checks. Use when auditing FunC contracts.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/c-review/skills/c-review",
+   "name": "c-review",
+   "description": "Performs comprehensive C/C++ security review for memory corruption, integer overflows, race conditions, and platform-specific vulnerabilities. Use when auditing native C/C++ applications, reviewing daemons or services for memory safety, or hunting integer overflow / use-after-free / race conditions ",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/code-improver/skills/code-improver",
+   "name": "code-improver",
+   "description": "Runs an autonomous review-and-fix improvement loop over any code target \u2014 a skill, plugin, module, or directory \u2014 using a reviewer the user names: any installed skill or agent. Keeps a cross-round findings ledger, escalates when fixes stop converging, and guards scope mechanically. Use when asked to",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/code-improver/tests/fixtures/pr-review-toolkit/skills/review-pr",
+   "name": "review-pr",
+   "description": "Reviews the current branch's changes against its base branch as a pull request: correctness of new and modified code, test coverage for it, and documentation accuracy. Use when asked to review a branch, a diff, or a pull request.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/constant-time-analysis/skills/constant-time-analysis",
+   "name": "constant-time-analysis",
+   "description": "Detects timing side-channel vulnerabilities in cryptographic code. Use when implementing or reviewing crypto code, encountering division on secrets, secret-dependent branches, or constant-time programming questions in C, C++, Go, Rust, Swift, Java, Kotlin, C#, PHP, JavaScript, TypeScript, Python, or",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/differential-review/skills/differential-review",
+   "name": "differential-review",
+   "description": "Performs security-focused differential review of code changes. Adapts analysis depth to codebase size, uses git blame for context, calculates blast radius by counting callers, checks test coverage of modified code, and generates a markdown report. Use when reviewing a PR, commit, or diff for securit",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/dwarf-expert/skills/dwarf-expert",
+   "name": "dwarf-expert",
+   "description": "Analyzes DWARF debug information in compiled binaries. Use when inspecting .debug_* sections, DIE trees, or DW_TAG_/DW_AT_ entries with dwarfdump/llvm-dwarfdump or readelf, verifying debug info with llvm-dwarfdump --verify, answering DWARF standard questions, or writing code that parses DWARF (libdw",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/fp-check/skills/fp-check",
+   "name": "fp-check",
+   "description": "Systematically verifies suspected security bugs to eliminate false positives, producing a TRUE POSITIVE or FALSE POSITIVE verdict with documented evidence for each. Use when asked whether a specific finding is real, exploitable, or a false positive, or to verify or validate a suspected vulnerability",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/github-triage/skills/github-triage",
+   "name": "github-triage",
+   "description": "Triages a repository's open GitHub issues and pull requests via the gh CLI. Optionally reviews and merges ready PRs \u2014 incrementally merging passing automated/bot PRs and maintainer-approved ones, and spawning review subagents for never-reviewed ones \u2014 then closes already-resolved issues with comment",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/let-fate-decide/skills/let-fate-decide",
+   "name": "let-fate-decide",
+   "description": "Draws the 12 Houses of the Zodiac Tarot spread to inject entropy into planning when prompts are vague, ambiguous, or casually delegated. Interprets the spread to guide next steps. Use when the user says 'let fate decide', 'YOLO', 'whatever', 'idk', or other nonchalant phrases, makes Yu-Gi-Oh referen",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/mutation-testing/skills/mutation-testing",
+   "name": "mutation-testing",
+   "description": "Configures mewt or muton campaigns, analyzes surviving mutants, and investigates bugs exposed by testing gaps. Use when setting up mutation testing, reviewing campaign results, identifying equivalent mutants, or finding bugs from surviving mutations.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/patching-bugs/skills/implement-patch",
+   "name": "implement-patch",
+   "description": "Use when a confirmed local bug needs an invariant-level fix, variant search, tests, and one local commit.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/patching-bugs/skills/reproduce-bug",
+   "name": "reproduce-bug",
+   "description": "Use when a named runtime or compiler bug in a local repository needs independent reproduction.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/post-patch-validation/skills/post-patch-validation",
+   "name": "post-patch-validation",
+   "description": "Validates security patches with reproducible baseline-versus-patched evidence, including original exploits, root-cause variants, behavior preservation, regressions, and newly introduced security failures. Use after a patch exists and before accepting, merging, or reporting it as fixed; also use when",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/regression-hunt/skills/hunt-regressions",
+   "name": "hunt-regressions",
+   "description": "Use when discovering possible regressions from a pinned change and its callers before reproduction.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/regression-hunt/skills/regression-hunt",
+   "name": "regression-hunt",
+   "description": "Use when investigating regressions in PRs or commits, coordinating a regression campaign, or resuming saved progress.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/regression-hunt/skills/report-regressions",
+   "name": "report-regressions",
+   "description": "Use when assembling or refreshing an evidence-linked regression report from saved campaign decisions.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/rust-review/skills/rust-review",
+   "name": "rust-review",
+   "description": "Performs comprehensive Rust security review for safe/unsafe boundary issues, memory safety in unsafe blocks, concurrency hazards, panic-induced DoS, FFI safety, and async runtime mistakes. Use when auditing Rust crates, services, or libraries \u2014 particularly those with `unsafe`, FFI, or concurrent co",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/semgrep-rule-creator/skills/semgrep-rule-creator",
+   "name": "semgrep-rule-creator",
+   "description": "Creates custom Semgrep rules for detecting security vulnerabilities, bug patterns, and code patterns. Use when writing Semgrep rules or building custom static analysis detections.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/spec-to-code-compliance/skills/spec-to-code-compliance",
+   "name": "spec-to-code-compliance",
+   "description": "Check code against the documentation that specifies it - which requirements hold, which the code contradicts, which are absent, and what the code does that no document mentions. Use when comparing an implementation against a whitepaper, protocol spec, or design document.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/static-analysis/skills/sarif-parsing",
+   "name": "sarif-parsing",
+   "description": "Parses and processes SARIF files from static analysis tools like CodeQL, Semgrep, or other scanners. Triggers on \"parse sarif\", \"read scan results\", \"aggregate findings\", \"deduplicate alerts\", or \"process sarif output\". Handles filtering, deduplication, format conversion, and CI/CD integration of SA",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/testing-handbook-skills/skills/address-sanitizer",
+   "name": "address-sanitizer",
+   "description": "Builds and runs code under AddressSanitizer to catch buffer overflows, use-after-free, and other memory errors during fuzzing or tests. Covers -fsanitize=address builds, ASAN_OPTIONS, reading the crash report, LeakSanitizer, and the overhead and platform trade-offs. Use when fuzzing C/C++ or Rust th",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/testing-handbook-skills/skills/atheris",
+   "name": "atheris",
+   "description": "Sets up and runs Atheris, the coverage-guided Python fuzzer built on libFuzzer. Covers TestOneInput harnesses, FuzzedDataProvider, instrumenting both pure Python and native C extensions, and running under AddressSanitizer. Use when fuzzing a Python package, hunting memory corruption in a Python C ex",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/testing-handbook-skills/skills/constant-time-testing",
+   "name": "constant-time-testing",
+   "description": "Measures timing side channels in cryptographic implementations by running them, using dudect for statistical analysis and Timecop over Valgrind for dynamic tracing. Covers the formal, symbolic, dynamic, and statistical tool categories and how to read a result. Use when testing whether a running impl",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/testing-handbook-skills/skills/fuzzing-obstacles",
+   "name": "fuzzing-obstacles",
+   "description": "Patches past the barriers that stop a fuzzer making progress \u2014 checksum and hash verification, magic-value validation, time-based seeds, and other non-deterministic global state. Covers locating the blocking check, neutering it behind a fuzzing build flag, and avoiding the false positives a patch ca",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/testing-handbook-skills/skills/libafl",
+   "name": "libafl",
+   "description": "Builds custom fuzzers with LibAFL, the modular Rust fuzzing library. Covers composing observers, feedbacks, mutators, schedulers, and executors into a fuzzer for targets the standard tools do not fit. Use when writing a bespoke fuzzer or mutator, fuzzing a non-standard target or architecture, implem",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/testing-handbook-skills/skills/ruzzy",
+   "name": "ruzzy",
+   "description": "Sets up and runs Ruzzy, Trail of Bits' coverage-guided Ruby fuzzer and the only production-ready one for the language. Covers harness structure, fuzzing pure Ruby and the native C extensions in gems, and sanitizer builds. Use when fuzzing a Ruby library or gem, testing a Ruby C extension for memory ",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/testing-handbook-skills/skills/wycheproof",
+   "name": "wycheproof",
+   "description": "Validates cryptographic implementations against Project Wycheproof's test vectors, which encode known attacks and edge cases across AES, RSA, ECDSA, ECDH, and more. Covers loading test vectors, mapping result flags onto pass and fail expectations, and reading a failure. Use when testing a crypto imp",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/trailmark/skills/diagramming-code",
+   "name": "diagramming-code",
+   "description": "Generates Mermaid diagrams from Trailmark code graphs. Produces call graphs, class hierarchies, module dependency maps, containment diagrams, complexity heatmaps, and attack surface data flow visualizations. Use when visualizing code architecture, drawing call graphs, generating class diagrams, crea",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/trailmark/skills/graph-evolution",
+   "name": "graph-evolution",
+   "description": "Compares Trailmark code graphs at two source code snapshots (git commits, tags, or directories) to surface security-relevant structural changes. Detects new attack paths, complexity shifts, blast radius growth, taint propagation changes, and privilege boundary modifications that text diffs miss. Use",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/trailmark/skills/slicing-code-context",
+   "name": "slicing-code-context",
+   "description": "Selects bounded, graph-informed source slices with Trailmark and delegates focused code analysis or patch-proposal work to a smaller subagent. Use when offloading function-, class-, caller-, callee-, call-path-, entrypoint-, or line-focused code tasks to constrained or locally hosted models without ",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/trailmark/skills/trailmark-review-gate",
+   "name": "trailmark-review-gate",
+   "description": "Runs a Trailmark structural review gate over a branch, pull request, fix commit, release diff, or git ref range to detect new entrypoints, new tainted paths, removed validation or authorization calls, privilege-boundary drift, blast-radius growth, complexity growth, and newly reachable sensitive sin",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/trailmark/skills/trailmark-summary",
+   "name": "trailmark-summary",
+   "description": "Runs a Trailmark summary analysis on a codebase. Returns auto-detected languages, entry point count, and dependency list. Use when vivisect or galvanize needs a quick structural overview. Triggers: trailmark summary, code summary, structural overview.",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/variant-analysis/skills/variant-analysis",
+   "name": "variant-analysis",
+   "description": "Hunts for the other instances of a bug already found \u2014 the variants of one root cause across a codebase. Use immediately after a vulnerability, logic bug, or bad pattern turns up in a specific file and the question becomes where else it occurs, including the bare conversational form (\"are there othe",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  },
+  {
+   "path": "github:trailofbits/skills/plugins/writing-lean-proofs/skills/writing-lean-proofs",
+   "name": "writing-lean-proofs",
+   "description": "Writes and reviews structured Lean 4 proofs and designs Lean libraries following Mathlib conventions. Use when proving theorems in Lean, formalizing mathematics or specifications in Lean 4, defining new types or definitions in a Lean library, reviewing Lean proofs for readability and maintainability",
+   "source": "github",
+   "repo": "trailofbits/skills"
+  }
+ ]
+}

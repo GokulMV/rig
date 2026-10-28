@@ -1,0 +1,8 @@
+po,line,item,qty,unit_price,status
+PO-501,1,Laptop stand,20,24.00,open
+PO-501,2,USB-C dock,10,89.00,open
+PO-502,1,Office chair,5,210.00,open
+PO-503,1,Printer paper (box),40,31.50,open
+PO-504,1,Monitor 27in,8,240.00,closed
+PO-505,1,Desk lamp,30,18.00,open
+PO-505,2,Cable kit,30,6.00,open

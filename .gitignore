@@ -1,0 +1,36 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+node_modules/
+.proving-ground/pg.db
+.proving-ground/runs/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.coverage
+htmlcov/
+
+# Secrets and editor state.
+.env
+.env.*
+.vscode/
+.idea/
+*.swp
+
+# Also a symlink to one (worktrees share it), not only a folder.
+node_modules
+
+# Rig's own data when you run it on this repo.
+.proving-ground/
+# Except the tutorial example's tasks: they ship with the engine (only its scenarios, never a run).
+!/engine/src/proving_ground/tutorial/project/.proving-ground/
+/engine/src/proving_ground/tutorial/project/.proving-ground/*
+!/engine/src/proving_ground/tutorial/project/.proving-ground/scenarios/
+# The same for the repo tutorial's (fewer tokens) example.
+!/engine/src/proving_ground/tutorial/tokens/project/.proving-ground/
+/engine/src/proving_ground/tutorial/tokens/project/.proving-ground/*
+!/engine/src/proving_ground/tutorial/tokens/project/.proving-ground/scenarios/
+.DS_Store

@@ -1,0 +1,5 @@
+"""CHF."""
+
+CODE = "CHF"
+DECIMALS = 2
+SYMBOL = "CH"

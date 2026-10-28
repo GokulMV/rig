@@ -1,0 +1,5 @@
+"""DKK."""
+
+CODE = "DKK"
+DECIMALS = 2
+SYMBOL = "DK"

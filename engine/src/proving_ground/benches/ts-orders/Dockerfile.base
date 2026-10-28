@@ -1,0 +1,11 @@
+FROM ubuntu:24.04
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash ca-certificates curl git procps python3 python3-pip python3-venv xz-utils \
+ && rm -rf /var/lib/apt/lists/*
+# Node 22.20.0 (runs TypeScript directly), the official build, checked against its published sum.
+RUN set -eux; arch="$(dpkg --print-architecture)"; case "$arch" in amd64) a=x64;; arm64) a=arm64;; *) exit 1;; esac; \
+    v=v22.20.0; f="node-$v-linux-$a.tar.xz"; cd /tmp; \
+    curl -fsSLO "https://nodejs.org/dist/$v/$f"; curl -fsSLO "https://nodejs.org/dist/$v/SHASUMS256.txt"; \
+    grep " $f\$" SHASUMS256.txt | sha256sum -c -; tar -xJf "$f" -C /usr/local --strip-components=1; rm -f "$f" SHASUMS256.txt; node --version
+RUN curl -fsSL https://downloads.claude.ai/claude-code-releases/bootstrap.sh | bash \
+ && ln -sf /root/.local/bin/claude /usr/local/bin/claude && claude --version

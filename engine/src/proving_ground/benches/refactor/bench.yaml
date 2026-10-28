@@ -1,0 +1,29 @@
+id: refactor
+name: Refactor without changing behaviour
+disciplines: [development]
+discipline: development
+summary: Three copy-pasted report exporters. Merge the duplication; every output must stay byte-for-byte the same.
+workflow:
+  id: refactor
+  name: Safe refactor
+  success: Less duplication, identical behaviour.
+  steps:
+    - {name: map, type: research, why: Find the duplication}
+    - {name: refactor, type: code, why: Change the structure}
+    - {name: verify, type: test, why: Prove the behaviour is the same}
+scenarios:
+  - id: behaviour
+    kind: typical
+    step: refactor
+    title: Merge the exporters, same output
+    instruction: "reports.py has three exporters (to_csv, to_tsv, to_markdown) that repeat the same logic. Refactor them to share it. Their output must not change at all."
+  - id: dedupe
+    kind: edge
+    step: refactor
+    title: The duplication is really gone
+    instruction: "reports.py repeats the same row-formatting loop in three exporters. Refactor so the loop and the money and date formatting exist once. Don't change any output."
+  - id: new-format
+    kind: typical
+    step: refactor
+    title: Add a JSON-lines exporter on the shared code
+    instruction: "Add to_jsonl(rows) to reports.py: one JSON object per line with the same formatted fields as the other exporters (keys: date, customer, amount), built on the same shared formatting. Keep the other exporters' output unchanged."

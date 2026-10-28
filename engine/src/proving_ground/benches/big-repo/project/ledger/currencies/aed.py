@@ -1,0 +1,5 @@
+"""AED."""
+
+CODE = "AED"
+DECIMALS = 2
+SYMBOL = "AE"

@@ -1,0 +1,29 @@
+id: big-repo
+disciplines: [development, data]
+name: A large codebase
+discipline: development
+summary: A multi-currency ledger of about 130 modules (currencies, rules, reports, I/O) with three needles - a one-cent drift on EUR invoices buried in one rule among thirty, a setting to rename across seventeen files and the docs, and a question whose obvious answer is a deprecated module. Work that only goes well with search, not by reading everything.
+workflow:
+  id: big-repo
+  name: Large-codebase change
+  success: The change is found and made everywhere it belongs, nowhere else, with the tests passing.
+  steps:
+    - {name: search, type: research, why: Find where it lives}
+    - {name: change, type: code, why: Make the change}
+    - {name: verify, type: test, why: Prove it}
+scenarios:
+  - id: eur-drift
+    kind: edge
+    step: search
+    title: A cent of drift on EUR invoices
+    instruction: "Ticket E4127: EUR invoices come out a cent lower than customers calculate. A 9.80 invoice totals 10.04 but should be 10.05 (2.5% processing fee, rounded half up to the cent). Find the cause and fix it without changing other currencies."
+  - id: rename-setting
+    kind: typical
+    step: change
+    title: Rename a setting everywhere
+    instruction: "Rename the setting retry_limit to max_retries everywhere it is used: code and docs. Keep the default of 3 and keep the tests passing."
+  - id: find-the-rule
+    kind: adversarial
+    step: search
+    title: Which rule is really in use?
+    instruction: "Finance asks: which module sets the late-fee percentage applied to APAC accounts today, and what is it? Write out/answer.md with your reasoning, ending with two lines: 'MODULE: ' and the module's path from the repo root (like ledger/x/y.py), and 'VALUE: ' and the percentage (like 2.5)."

@@ -1,0 +1,44 @@
+id: rag-qa
+disciplines: [research, data, support]
+name: Questions answered from a company's documents
+discipline: research
+summary: About 40 short documents for a fictional helpdesk company - product pages, policies, release notes, tables, outdated copies that conflict with newer ones, and a page reachable only by a link. Questions need one document, two documents, the newest of conflicting documents, a table cell, or an honest 'not in the docs'. Each answer is matched exactly and each cited source must hold the evidence.
+workflow:
+  id: rag-qa
+  name: Answer from the documents
+  success: Every answer is right, cites only documents that hold the evidence, and says so when the documents do not answer.
+  steps:
+    - {name: retrieve, type: research, why: Find the documents that matter}
+    - {name: answer, type: research, why: Answer and cite}
+scenarios:
+  - id: lookup
+    kind: typical
+    step: answer
+    title: Single-document factual questions
+    instruction: "Answer only from the documents in corpus/. Write out/answers.json: an object keyed by question id, each value {\"answer\": <short answer: just the value or name>, \"sources\": [<paths of the documents that hold the evidence, like corpus/product/api.md>]}. Where documents disagree, the one with the latest 'Updated:' date is right. If the documents do not answer a question, the answer is exactly 'not in the docs' and sources is []. Questions: L1: How many days does the free trial of a new workspace last? L2: How many shared inboxes can a workspace on the Team plan have? L3: What is the largest number of active automation rules a workspace can have? L4: What is the maximum size of one attachment? L5: What is the oldest iOS version the mobile app runs on? L6: Who is the chief executive officer of Brindle Systems?"
+  - id: multi-hop
+    kind: edge
+    step: answer
+    title: Questions that need two documents
+    instruction: "Answer only from the documents in corpus/. Write out/answers.json: an object keyed by question id, each value {\"answer\": <short answer: just the value or name>, \"sources\": [<paths of the documents that hold the evidence, like corpus/product/api.md>]}. Where documents disagree, the one with the latest 'Updated:' date is right. If the documents do not answer a question, the answer is exactly 'not in the docs' and sources is []. Questions: M1: What is the price per agent per month of the cheapest plan that includes SAML single sign-on? M2: What does the add-on for translating knowledge base articles cost per month? M3: Which company hosts the data of customers who are billed in euros? M4: Who do escalations from standard support go to?"
+  - id: conflicting
+    kind: edge
+    step: answer
+    title: Old documents that disagree with new ones
+    instruction: "Answer only from the documents in corpus/. Write out/answers.json: an object keyed by question id, each value {\"answer\": <short answer: just the value or name>, \"sources\": [<paths of the documents that hold the evidence, like corpus/product/api.md>]}. Where documents disagree, the one with the latest 'Updated:' date is right. If the documents do not answer a question, the answer is exactly 'not in the docs' and sources is []. Questions: C1: Within how many days of purchase can an annual plan be refunded? C2: How many days after deletion is a deleted ticket purged? C3: How many requests per minute may one API token make?"
+  - id: table
+    kind: edge
+    step: answer
+    title: Answers that sit in a table cell
+    instruction: "Answer only from the documents in corpus/. Write out/answers.json: an object keyed by question id, each value {\"answer\": <short answer: just the value or name>, \"sources\": [<paths of the documents that hold the evidence, like corpus/product/api.md>]}. Where documents disagree, the one with the latest 'Updated:' date is right. If the documents do not answer a question, the answer is exactly 'not in the docs' and sources is []. Questions: T1: What is the minimum number of agents on the Enterprise plan? T2: What is the first-response target for a High priority ticket sent to support by a Business plan customer? T3: How many custom fields can one ticket have on the Team plan?"
+  - id: unanswerable
+    kind: adversarial
+    step: answer
+    title: Questions the documents cannot answer
+    instruction: "Answer only from the documents in corpus/. Write out/answers.json: an object keyed by question id, each value {\"answer\": <short answer: just the value or name>, \"sources\": [<paths of the documents that hold the evidence, like corpus/product/api.md>]}. Where documents disagree, the one with the latest 'Updated:' date is right. If the documents do not answer a question, the answer is exactly 'not in the docs' and sources is []. Questions: U1: What was Brindle Systems' revenue last year? U2: Does Brindle Desk integrate with the Zenwork video platform? U3: How many people work at Brindle Systems?"
+  - id: held-out-batch
+    kind: edge
+    step: answer
+    held_out: true
+    title: A batch held back from the task list
+    instruction: "Answer only from the documents in corpus/. Write out/answers.json: an object keyed by question id, each value {\"answer\": <short answer: just the value or name>, \"sources\": [<paths of the documents that hold the evidence, like corpus/product/api.md>]}. Where documents disagree, the one with the latest 'Updated:' date is right. If the documents do not answer a question, the answer is exactly 'not in the docs' and sources is []. Questions: H1: Which release version added audit log export? H2: What is the minimum number of agents on the Business plan? H3: What uptime commitment applies to the plan that has unlimited shared inboxes? H4: Does Brindle Desk offer a built-in phone calling feature?"
